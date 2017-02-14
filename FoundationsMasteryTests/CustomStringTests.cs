@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using FoundationsMastery;
 
 namespace FoundationsMasteryTests
 {
@@ -17,8 +18,8 @@ namespace FoundationsMasteryTests
             char[] mychars = new char[] { 'a', 'b', 'c' };
             CustomString myString = new CustomString(mychars);
 
-            //int expected_length = ??
-            //int actual_length = ??
+            int expected_length = 0;
+            int actual_length = 0;
 
             Assert.AreEqual(expected_length, actual_length);
         }
