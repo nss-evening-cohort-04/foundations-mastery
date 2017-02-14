@@ -10,7 +10,14 @@ namespace FoundationsMastery
     public class CustomString : ICustomString
     {
         public char[] mychars;
-        IEnumerable<char> mycontents { get; set; }
+        public List<char> mycontents
+        {
+            set
+            {
+                mycontents = Contents.ToList(); // are you kidding me
+            }
+            
+        }
 
         public CustomString()
         {
@@ -30,15 +37,17 @@ namespace FoundationsMastery
                 //    Contents += x.ToList();
                 //};
                 //return Contents;
-                return mycontents;
+                return Contents;
 
             }
 
             set
             {
-                Contents = mycontents.ToList();
+                //Contents = mycontents.ToList(); //doesn't actually make Contents a list
             }
         }
+
+       
 
 
         public int Length
@@ -52,7 +61,8 @@ namespace FoundationsMastery
 
         public void Clear()
         {
-            // MSDN & StackOverflow say you can't Remove items from IEnumerable -- 
+            // MSDN & StackOverflow say you can't Remove items from IEnumerable -- must convert Contents to list
+            //Contents.Clear();
         }
 
         public string Concat(IEnumerable<char> rhs)
