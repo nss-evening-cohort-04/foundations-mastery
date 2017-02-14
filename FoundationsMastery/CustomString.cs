@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace FoundationsMastery.CustomString
 {
     public class CustomString : Interfaces.ICustomString
@@ -54,7 +55,8 @@ namespace FoundationsMastery.CustomString
 
         public string Print()
         {
-            throw new NotImplementedException();
+            //Console.WriteLine("This is a test");
+            return "This is a test";
         }
     }
 }
