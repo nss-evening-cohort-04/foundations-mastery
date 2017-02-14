@@ -10,6 +10,9 @@ namespace FoundationsMasteryTests
         [TestMethod]
         public void EnsureICanCreateAnInstance()
         {
+            CustomString testString = new CustomString();
+
+            Assert.IsNotNull(testString);
         }
 
         [TestMethod]
@@ -18,8 +21,8 @@ namespace FoundationsMasteryTests
             char[] mychars = new char[] { 'a', 'b', 'c' };
             CustomString myString = new CustomString(mychars);
 
-            int expected_length = 0;
-            int actual_length = 0;
+            int expected_length = 3;
+            int actual_length = myString.Length;
 
             Assert.AreEqual(expected_length, actual_length);
         }

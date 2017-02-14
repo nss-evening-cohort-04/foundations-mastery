@@ -9,7 +9,7 @@ namespace FoundationsMastery
 {
     public class CustomString : ICustomString
     {
-        private char[] mychars;
+        public char[] mychars;
 
         public CustomString()
         {
@@ -37,7 +37,8 @@ namespace FoundationsMastery
         {
             get
             {
-                throw new NotImplementedException();
+
+                return mychars.Length;
             }
         }
 
