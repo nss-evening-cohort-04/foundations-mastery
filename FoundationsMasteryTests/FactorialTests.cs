@@ -9,6 +9,11 @@ namespace FoundationsMasteryTests
         [TestMethod]
         public void EnsureICanCreateAnInstance()
         {
+            // Arrange
+            var iterative = new Iterative(int 5);
+
+            // Assert
+            Assert.IsNotNull(iterative);
         }
 
         [TestMethod]
