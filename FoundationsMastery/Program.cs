@@ -11,21 +11,27 @@ namespace FoundationsMastery
         static void Main(string[] args)
         {
 
-            int x = 0;
+            char[] mychars = { 'a', 'b', 'c' };
 
-            while (true)
-            {
-                Console.WriteLine($"[{x}]>");
-                // increment number of times using program
-                x++;
-                // user passed expression
-                string input = Console.ReadLine();
-                if (input.ToLower() == "quit" || input.ToLower() == "exit")
-                {
-                    Console.WriteLine("Bye!");
-                    break;
-                }
-            }
+            List<char> mychars2 = new List<char>() { 'a', 'b', 'c' };
+
+           // CustomString.Concat(mychars);
+
+            //int x = 0;
+
+            //while (true)
+            //{
+            //    Console.WriteLine($"[{x}]>");
+            //    // increment number of times using program
+            //    x++;
+            //    // user passed expression
+            //    string input = Console.ReadLine();
+            //    if (input.ToLower() == "quit" || input.ToLower() == "exit")
+            //    {
+            //        Console.WriteLine("Bye!");
+            //        break;
+            //    }
+            //}
         }
     }
 }
