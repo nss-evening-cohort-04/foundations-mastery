@@ -8,6 +8,7 @@ namespace FoundationsMastery.Interfaces
 {
     interface ICustomString
     {
+        //ienumerable characters, contents property 
         IEnumerable<char> Contents { set; get; }
         int Length { get; }
         string Print();
