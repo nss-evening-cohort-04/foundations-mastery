@@ -99,7 +99,7 @@ namespace FoundationsMasteryTests
             char[] mychars = new char[] { 'a', 'b', 'c' };
             CustomString myString = new CustomString(mychars);
             // Arrange
-            string expectedResult = "This is a test";
+            string expectedResult = "abc";
             string actualResult = myString.Print();
             // Assert
             Assert.AreEqual(expectedResult, actualResult);

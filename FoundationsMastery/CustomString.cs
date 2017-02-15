@@ -55,8 +55,7 @@ namespace FoundationsMastery.CustomString
 
         public string Print()
         {
-            //Console.WriteLine("This is a test");
-            return "This is a test";
+            return String.Concat(Contents);
         }
     }
 }
