@@ -109,7 +109,10 @@ namespace FoundationsMasteryTests
             char[] mychars = new char[] { 'a', 'b', 'c' };
             CustomString myString = new CustomString();
 
-            Assert.IsNotNull(myString);
+            string expected_output = "abc";
+            string actual_output = String.Concat(mychars);
+
+            Assert.AreEqual(expected_output, actual_output);
         }
     }
     
