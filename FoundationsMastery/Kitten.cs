@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace FoundationsMastery
 {
-    class Kitten
+    public class Kitten : Cat
     {
+        public override void Meow()
+        {
+            base.Meow();
+        }
     }
 }

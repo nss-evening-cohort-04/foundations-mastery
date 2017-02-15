@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace FoundationsMastery
 {
-    class Cat
+    public class Cat
     {
+        public virtual void Meow()
+        {
+
+        }
     }
 }

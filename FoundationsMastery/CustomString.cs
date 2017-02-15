@@ -32,6 +32,12 @@ namespace FoundationsMastery
             get
             {
                 //lenghth of contents
+                //int result = 0;
+                //while (Contents.MoveNext())
+                //{
+                //    result++;
+                //}
+                //return result;
                 throw new NotImplementedException();
             }
         }
