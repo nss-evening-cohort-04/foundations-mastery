@@ -9,65 +9,49 @@ namespace FoundationsMastery
 {
     public class CustomString : ICustomString
     {
-        public char[] mychars;
-        public List<char> mycontents
+        public CustomString() //dont leave this constructor totally empty
         {
-            set
-            {
-                mycontents = Contents.ToList(); // are you kidding me
-            }
-            
+            this.Contents = new List<char>();
         }
 
-        public CustomString()
+        public CustomString(IEnumerable<char> contents)
         {
+            this.Contents = contents; // sets the value of the contents property from what is passed in the constructor
         }
 
-        public CustomString(char[] mychars)
-        {
-            this.mychars = mychars;
-        }
+        public IEnumerable<char> Contents { get; set; } // this will have value from the constructor
+        //IEnumerables are Interfaces -- they can't be instantiated 
 
-        public IEnumerable<char> Contents
+
+        public int Length //give the length of the contents IEnumerable
         {
             get
             {
-                //foreach (char x in mychars)
-                //{
-                //    Contents += x.ToList();
-                //};
-                //return Contents;
-                return Contents;
-
+                return this.Contents.Count(); // bc stored as IEnumerable, you have to use Count method vs. Length
             }
+        } //give the length of the contents IEnumerable
 
-            set
+        public void Clear() //clear means this.Contents should be empty
+        {
+            //Contents = new List<char>(); 
+            Contents.ToList().Clear();
+        }
+
+        //rhs == right hand side
+        public string Concat(IEnumerable<char> rhs) //concat = adding 2 IEnumerables into one string
+        {
+            string concat = "";
+
+            foreach (char a in this.Contents) //contents is a property on this class
             {
-                //Contents = mycontents.ToList(); //doesn't actually make Contents a list
+                concat += a;
             }
-        }
 
-       
-
-
-        public int Length
-        {
-            get
+            foreach (char a in rhs) //rhs is the value being passed in
             {
-
-                return mychars.Length;
+                concat += a;
             }
-        }
-
-        public void Clear()
-        {
-            // MSDN & StackOverflow say you can't Remove items from IEnumerable -- must convert Contents to list
-            //Contents.Clear();
-        }
-
-        public string Concat(IEnumerable<char> rhs)
-        {
-            throw new NotImplementedException();
+            return concat;
         }
 
         public string Interleave(IEnumerable<char> rhs)

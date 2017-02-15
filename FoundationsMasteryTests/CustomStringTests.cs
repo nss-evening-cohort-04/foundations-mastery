@@ -11,7 +11,10 @@ namespace FoundationsMasteryTests
         [TestMethod]
         public void EnsureICanCreateAnInstance()
         {
-            CustomString testString = new CustomString();
+            CustomString testString = new CustomString(new List<char>());
+
+            char[] mychars = new char[] { 'a', 'b', 'c' };
+            CustomString myOtherString = new CustomString(mychars);
 
             Assert.IsNotNull(testString);
         }
@@ -33,17 +36,18 @@ namespace FoundationsMasteryTests
         {
             char[] mychars = new char[] { 'a', 'b', 'c' };
             CustomString myString = new CustomString(mychars);
+
             //public IEnumerable<char> Contents;
             //Contents testContents = new Contents;
+            var expected = typeof(IEnumerable<char>);
+            var actual = myString.Contents.GetType();
 
-            //int expected_length = 3;
-            //int actual_length = myString.Length;
 
             //// 1. Assert that the Contents property is the correct 'type'
-            //Assert.IsInstanceOfType(Contents.GetType(), typeof(contents));
+            Assert.IsInstanceOfType(myString.Contents, typeof(IEnumerable<char>));
 
             //// 2. Assert that the returned Contents is the correct length
-            //CollectionAssert.AreEqual(expectedLength, actualLength);
+            Assert.AreEqual(myString.Length, mychars.Length);
         }
 
         [TestMethod]
