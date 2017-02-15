@@ -13,25 +13,22 @@ namespace FoundationsMastery
         public CustomString()
         {
         }
-
         public CustomString(char[] mychars)
         {
             this.mychars = mychars;
         }
-
+      
         public IEnumerable<char> Contents
         {
             get
             {
-                throw new NotImplementedException();
+                return mychars;
             }
-
             set
             {
-                throw new NotImplementedException();
+                mychars = value.ToArray();
             }
         }
-
         public int Length
         {
             get
@@ -39,16 +36,19 @@ namespace FoundationsMastery
                 throw new NotImplementedException();
             }
         }
-
         public void Clear()
         {
-            throw new NotImplementedException();
+            Contents = new List<char>();
+            Contents.ToList().Clear();
         }
 
         public string Concat(IEnumerable<char> rhs)
         {
-            throw new NotImplementedException();
-        }
+            string concat = "";
+            concat += Print();
+
+                return concat;
+;        }
 
         public string Interleave(IEnumerable<char> rhs)
         {
