@@ -8,18 +8,22 @@ namespace FoundationsMastery
 {
     public class CustomString : Interfaces.ICustomString
     {
+
+        //private string myCustomString;
+        private List<char> myCustomString = new List<char>() {'a','b','c'};
+        
+        //List<char> mychars2 = new List<char>() { 'a', 'b', 'c' };
+
         public IEnumerable<char> Contents
         {
             get
             {
-                //new string
-                throw new NotImplementedException();
+                return myCustomString;//.AsEnumerable<char>();
             }
 
             set
             {
-                //to assigned string A or B
-                throw new NotImplementedException();
+                myCustomString = value.ToList();
             }
         }
 
@@ -27,7 +31,7 @@ namespace FoundationsMastery
         {
             get
             {
-                //gets length of the string
+                //lenghth of contents
                 throw new NotImplementedException();
             }
         }
@@ -36,12 +40,12 @@ namespace FoundationsMastery
         {   
             //clear Contents method
             //clears all enter strings?
-            //clears one string to allow a new to be entered?
             throw new NotImplementedException();
         }
 
         public string Concat(IEnumerable<char> rhs)
         {
+            //combines with string in contents to the string in rhs
             //adds string A + string B = string C
             throw new NotImplementedException();
         }
@@ -50,10 +54,21 @@ namespace FoundationsMastery
         {
             //"http://algorithmsandme.in/2014/05/if-string-is-interleaved-of-two-strings/"
             // string C = contents of string A and string B
-            // test Length of C to match Length of A + B
             // if length passes check first char C with A, then 2nd then 3rd, repeat with B using loop until pass/fail
 
+            //string a = 1,2,3
+            //string b = a,b,c
+
+            //result = 1a2b3c
+
             throw new NotImplementedException();
+        }
+
+        public void Output()
+        {
+            //prints result
+            //returns string result
+            Console.WriteLine(Contents);
         }
 
         public string Print()

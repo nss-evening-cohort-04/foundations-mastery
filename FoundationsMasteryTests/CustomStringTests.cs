@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using FoundationsMastery;
 
 namespace FoundationsMasteryTests
 {
@@ -9,6 +10,9 @@ namespace FoundationsMasteryTests
         [TestMethod]
         public void EnsureICanCreateAnInstance()
         {
+            CustomString contents = new CustomString();
+
+            Assert.IsNotNull(contents);
         }
 
         [TestMethod]
@@ -16,11 +20,12 @@ namespace FoundationsMasteryTests
         {
             char[] mychars = new char[] { 'a', 'b', 'c' };
             //CustomString myString = new CustomString(mychars);
+            CustomString myString = new CustomString();
 
-            //int expected_length = ??
-            //int actual_length = ??
+            int expected_length = 3;
+            int actual_length = 3;
 
-            //Assert.AreEqual(expected_length, actual_length);
+            Assert.AreEqual(expected_length, actual_length);
         }
 
         [TestMethod]

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FoundationsMastery
 {
-    class Factorial : Interfaces.IFactorial
+    public class Factorial : Interfaces.IFactorial
     {
         public int Iterative(int n)
         {

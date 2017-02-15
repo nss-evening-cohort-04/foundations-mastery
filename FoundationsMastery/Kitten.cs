@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FoundationsMastery
 {
-    class InheritenceVirtual
+    class Kitten
     {
     }
 }
