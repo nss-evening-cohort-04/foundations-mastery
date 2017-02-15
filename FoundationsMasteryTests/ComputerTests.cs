@@ -2,7 +2,7 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FoundationsMastery.Computer;
+using FoundationsMastery;
 
 namespace FoundationsMasteryTests
 {
@@ -53,7 +53,7 @@ namespace FoundationsMasteryTests
             // Assert
             Assert.AreEqual(expectedResult, actualResult);
         }
-
+        // This ensures I can also set the name of the OS being used
         [TestMethod]
         public void EnsureOsTypeOverloadIsWorkingCorrectly()
         {

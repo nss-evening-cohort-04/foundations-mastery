@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FoundationsMastery;
 
-namespace FoundationsMastery.Windows
+namespace FoundationsMastery
 {
-    public class Windows : Computer.Computer
+    public class WindowsOS : Computer
     {
         public bool MadeOfPlastic { get; set; }
 
-        public Windows()
+        public WindowsOS()
         {
             ProcessType = "I7";
             MadeOfPlastic = true;
@@ -28,8 +29,16 @@ namespace FoundationsMastery.Windows
 
         public int NumOfCores(int cores)
         {
-            
+
             return ProcessCores = cores;
+        }
+
+        // Reverse a string for the fun of it.
+        public string ReverseString(string reverseMe)
+        {
+            char[] charArray = reverseMe.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
         }
     }
 }
