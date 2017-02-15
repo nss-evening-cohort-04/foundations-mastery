@@ -5,7 +5,7 @@ namespace FoundationsMasteryTests
 {
     [TestClass]
     public class FactorialTests
-    {
+    {/*
         [TestMethod]
         public void EnsureICanCreateAnInstance()
         {
@@ -33,6 +33,7 @@ namespace FoundationsMasteryTests
         //Hint: what goes here to say an exception is expected?
         public void EnsureFactorialCalcIterativeFails()
         {
-        }
+        }*/
     }
+    
 }
