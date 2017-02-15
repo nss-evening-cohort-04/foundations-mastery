@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FoundationsMastery.Interfaces
+namespace FoundationsMastery.Classes
 {
-    interface ICustomString
+    public interface ICustomString
     {
         IEnumerable<char> Contents { set; get; }
         int Length { get; }
