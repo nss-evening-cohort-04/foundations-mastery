@@ -11,6 +11,9 @@ namespace FoundationsMasteryTests
         [TestMethod]
         public void EnsureICanCreateAnInstance()
         {
+            char[] mychars = new char[] { 'a', 'b', 'c' };
+            CustomString myString = new CustomString(mychars);
+            Assert.IsNotNull(myString);
         }
 
         [TestMethod]
@@ -19,11 +22,9 @@ namespace FoundationsMasteryTests
             // Arrange
             char[] mychars = new char[] { 'a', 'b', 'c' };
             CustomString myString = new CustomString(mychars);
-
             // Act
             int expectedLength = 3;
             int actualLength = myString.Length;
-
             // Assert
             Assert.AreEqual(expectedLength, actualLength);
         }
@@ -34,18 +35,15 @@ namespace FoundationsMasteryTests
             // Arrange
             char[] mychars = new char[] { 'a', 'b', 'c' };
             CustomString myString = new CustomString(mychars);
-
             // Act
             Type type = typeof(FoundationsMastery.CustomString.CustomString);
             int expectedLength = 3;
             int actualLength = myString.Length;
-
             // Assert
             // 1. Assert that the Contents property is the correct 'type'
             Assert.IsInstanceOfType(myString, type);
             // 2. Assert that the returned Contents is the correct length
             Assert.AreEqual(expectedLength, actualLength);
-
         }
 
         [TestMethod]
@@ -56,11 +54,9 @@ namespace FoundationsMasteryTests
             char[] mychars = new char[] { 'a', 'b', 'c' };
             CustomString myString = new CustomString(mychars);
             CustomString myStringNotNull = new CustomString(mychars);
-
             // Act
             // Set Contents to null
             myString.Clear();
-
             // Assert
             // How do you ensure your clear function works?
             // Test to see if Contents is null
@@ -75,7 +71,6 @@ namespace FoundationsMasteryTests
             // Act
             char[] mychars = new char[] { 'a', 'b', 'c' };
             CustomString myString = new CustomString(mychars);
-
             // Arrange
             string expectedResult = "abc";
             string actualResult = myString.Concat(myString.Contents);
@@ -101,10 +96,13 @@ namespace FoundationsMasteryTests
         public void EnsurePrintIsWorkingCorrectly()
         {
             // Act
-
+            char[] mychars = new char[] { 'a', 'b', 'c' };
+            CustomString myString = new CustomString(mychars);
             // Arrange
-
+            string expectedResult = "abc";
+            string actualResult = myString.Print();
             // Assert
+            Assert.AreEqual(expectedResult, actualResult);
         }
     }
 }
