@@ -37,15 +37,26 @@ namespace FoundationsMastery
             Contents.ToList().Clear();
         }
 
+        public string Print() //print to console, return string
+        {
+            string print = "";
+
+            foreach (char a in this.Contents)
+            {
+                print += a;
+            }
+
+            //Console.WriteLine(print);
+
+            return print;
+        }
+
         //rhs == right hand side
         public string Concat(IEnumerable<char> rhs) //concat = adding 2 IEnumerables into one string
         {
             string concat = "";
 
-            foreach (char a in this.Contents) //contents is a property on this class
-            {
-                concat += a;
-            }
+            concat += Print(); // leveraging code from Print to use here
 
             foreach (char a in rhs) //rhs is the value being passed in
             {
@@ -56,12 +67,20 @@ namespace FoundationsMastery
 
         public string Interleave(IEnumerable<char> rhs)
         {
-            throw new NotImplementedException();
+            //ternary operator-- (bool) ? what the value is if it's true : what the value is if it's false 
+           var length = (rhs.Count() > Contents.Count()) ? Contents.Count() : rhs.Count();
+           var contentList = Contents.ToList();
+           var rhsList = rhs.ToList();
+           var zipper = "";
+
+           for (var i = 0; i < length; i++)
+            {
+                zipper += contentList[i];
+                zipper += rhsList[i];
+            }
+
+            return zipper;
         }
 
-        public string Print()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
