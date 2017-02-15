@@ -32,6 +32,15 @@ namespace FoundationsMasteryTests
             Assert.IsNotNull(testString);
         }
 
+        /*[TestMethod]
+        public void EnsureContentsIsNeverNull()
+        {
+            CustomString testString = new CustomString(new List<char>());
+            //IEnumerable<>
+            //more code i forgot
+
+        }*/
+
         [TestMethod]
         public void EnsureICanPassInACharEnumerable()
         {
