@@ -32,7 +32,7 @@ namespace FoundationsMastery
         // Method Overloading 
         public virtual string OsType(string ostype)
         {
-            return OS = ostype;
+            return OS = ostype; 
         }
 
     }
