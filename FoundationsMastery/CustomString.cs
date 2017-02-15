@@ -39,7 +39,7 @@ namespace FoundationsMastery
 
         public void Clear()
         {
-            throw new NotImplementedException();
+            Contents = null;
         }
 
         public string Concat(IEnumerable<char> rhs)

@@ -34,9 +34,14 @@ namespace FoundationsMasteryTests
             CustomString myString = new CustomString(mychars);
 
             // 1. Assert that the Contents property is the correct 'type'
-
+            var contentLength = myString.Length;
+            Assert.AreEqual(contentLength.GetType(), typeof(string));
 
             // 2. Assert that the returned Contents is the coorect length
+            int expected_length = 3;
+            int actual_length = contentLength;
+
+            Assert.AreEqual(expected_length, actual_length);
         }
 
         [TestMethod]
@@ -47,6 +52,9 @@ namespace FoundationsMasteryTests
             myString.Clear();
 
             // How do you ensure your clear function works?
+
+            var contents = myString.Contents;
+            Assert.IsNull(contents);
         }
     }
 }
