@@ -11,23 +11,39 @@ namespace FoundationsMastery
     {
         public int Iterative(int n)
         {
-            int product = 1;
-            for (int j = 1; j <= n; j++)
+            if (n >= 1)
             {
-                product *= j;
+                int product = 1;
+                for (int j = 1; j <= n; j++)
+                {
+                    product *= j;
+                }
+                return product;
             }
-            return product;
+            else
+            {
+                System.ArgumentException test = new System.ArgumentException("this is s a test");
+                throw test;
+            }
         }
 
         public int Recursive(int n)
         {
-            if (n == 0)
+            if (n >= 1)
             {
-                return 1;
+                if (n == 1)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return n * Recursive(n - 1);
+                }
             }
             else
             {
-                return n * Recursive(n - 1);
+                System.ArgumentException test = new System.ArgumentException("this is s a test");
+                throw test;
             }
         }
     }

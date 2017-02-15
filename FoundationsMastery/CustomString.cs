@@ -11,43 +11,35 @@ namespace FoundationsMastery
     {
         public IEnumerable<char> Contents
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
+            // I have no idea what this is
         }
 
         public int Length
         {
             get
             {
-                throw new NotImplementedException();
+                return Contents.Count();
             }
         }
 
         public void Clear()
         {
-            throw new NotImplementedException();
+            return Contents.Clear();
         }
 
         public string Concat(IEnumerable<char> rhs)
         {
-            throw new NotImplementedException();
+
         }
 
         public string Interleave(IEnumerable<char> rhs)
         {
-            throw new NotImplementedException();
+
         }
 
         public string Print()
         {
-            throw new NotImplementedException();
+
         }
     }
 }

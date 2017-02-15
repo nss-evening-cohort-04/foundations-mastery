@@ -46,7 +46,7 @@ namespace FoundationsMasteryTests
         {
             // Arrange
             Factorial myFactorial = new Factorial();
-            myFactorial.Recursive("math");
+            myFactorial.Recursive(-1);
         }
 
         [TestMethod]
@@ -55,7 +55,7 @@ namespace FoundationsMasteryTests
         {
             // Arrange
             Factorial myFactorial = new Factorial();
-            myFactorial.Iterative("math");
+            myFactorial.Iterative(-1);
 
         }
     }
