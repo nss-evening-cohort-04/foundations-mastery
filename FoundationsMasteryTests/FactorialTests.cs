@@ -43,13 +43,13 @@ namespace FoundationsMasteryTests
         [TestMethod]
         // Still needs to be worked on......
         //Hint: what goes here to say an exception is expected?
-        [ExpectedException(typeof(ArgumentException))]
+        [ExpectedException(typeof(System.ArgumentOutOfRangeException))]
         public void EnsureFactorialCalcRecursiveFails()
         {
             // Act
             Factorial factorial = new Factorial();
             // Arrange
-            int actualResult = factorial.Recursive(0);
+            int actualResult = factorial.Recursive(-1);
             // Should Fail....
         }
 

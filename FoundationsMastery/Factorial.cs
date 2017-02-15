@@ -22,12 +22,15 @@ namespace FoundationsMastery.Factorial
 
         public int Recursive(int n)
         {
-            if (n <= 0)
+            if(n < 1)
+            {
+                throw new System.ArgumentOutOfRangeException();
+            }
+            else if (n == 1)
                 return 1;
             else
             {
-                int y = n * Recursive(n - 1);
-                return y;
+                return n * Recursive(n - 1);
             }
         }
     }
