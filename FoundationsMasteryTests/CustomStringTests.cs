@@ -34,6 +34,8 @@ namespace FoundationsMasteryTests
             CustomString myString = new CustomString(mychars);
 
             // 1. Assert that the Contents property is the correct 'type'
+
+
             // 2. Assert that the returned Contents is the coorect length
         }
 
