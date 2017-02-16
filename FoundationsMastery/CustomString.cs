@@ -6,6 +6,8 @@ namespace FoundationsMastery
 {
     public class CustomString : ICustomString
     {
+        private IEnumerable<char> contents { get; set; }
+
         public CustomString()
         {
 
@@ -13,19 +15,19 @@ namespace FoundationsMastery
 
         public CustomString(char[] chars)
         {
-            Contents = chars;
+            contents = chars;
         }
 
         public IEnumerable<char> Contents
         {
             get
             {
-                return Contents;
+                return contents;
             }
 
             set
             {
-                Contents = value;
+                contents = value;
             }
         }
 
@@ -33,13 +35,18 @@ namespace FoundationsMastery
         {
             get
             {
-                return Contents.ToString().Length;
+                string charString = null;
+                foreach(char x in contents)
+                {
+                    charString += x;
+                }
+                return charString.Length;
             }
         }
 
         public void Clear()
         {
-            Contents = null;
+            contents = null;
         }
 
         public string Concat(IEnumerable<char> rhs)

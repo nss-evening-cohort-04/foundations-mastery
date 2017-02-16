@@ -39,9 +39,8 @@ namespace FoundationsMasteryTests
 
             // 2. Assert that the returned Contents is the coorect length
             int expected_length = 3;
-            int actual_length = contentLength;
 
-            Assert.AreEqual(expected_length, actual_length);
+            Assert.AreEqual(expected_length, contentLength);
         }
 
         [TestMethod]
