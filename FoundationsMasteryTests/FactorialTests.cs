@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using FoundationsMastery;
 
 namespace FoundationsMasteryTests
 {
@@ -9,6 +10,9 @@ namespace FoundationsMasteryTests
         [TestMethod]
         public void EnsureICanCreateAnInstance()
         {
+            CustomFactorial factorial = new CustomFactorial();
+
+            Assert.IsNotNull(factorial);
         }
 
         [TestMethod]
