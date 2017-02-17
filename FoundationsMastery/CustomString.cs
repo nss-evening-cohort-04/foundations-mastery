@@ -10,26 +10,73 @@ namespace FoundationsMastery
     {
         public IEnumerable<char> Contents { get; set; }
 
-        public int Length { get; }
+        public int Length
+        {
+            get
+            {
+                return Contents.Count();
+            }
+        } // give length of the IEnumberable Contents
+
+        public CustomString()
+        {
+            this.Contents = new List<char>();
+        }
+
+        public CustomString(IEnumerable<char> newContents)
+        {
+            this.Contents = newContents;
+        }
 
         public void Clear()
         {
-            throw new NotImplementedException();
+            Contents = new List<char>(); //IEnumberables are Interfaces - they can't be instantiated - needs to be a List
+            Contents.ToList().Clear();
         }
 
-        public string Concat(IEnumerable<char> rhs)
+        // rhs == right hand side; a new IEnumerable that is being passed in (Contents can be accessed already)
+        public string Concat(IEnumerable<char> rhs) //concat = adding two Ienuerables into one string
         {
-            throw new NotImplementedException();
+            string concat = "";
+            foreach  (char a in Contents) //contents is a property on this class
+            {
+                concat += a;
+            }
+            foreach (char a in rhs)
+            {
+                concat += a;
+            }
+            return concat;
         }
 
         public string Interleave(IEnumerable<char> rhs)
         {
-            throw new NotImplementedException();
+            // ternary operator: (bool) ? return value if true : return value if false
+            var length = (rhs.Count() > Contents.Count()) ? Contents.Count() : rhs.Count();
+            var conList = Contents.ToList();
+            var rhsList = rhs.ToList();
+            var zipper = "";
+
+            for (var i = 0; i < length; i++)
+            {
+                zipper += conList[i];
+                zipper += rhsList[i];
+            }
+
+            return zipper;
         }
 
-        public string Print()
+        public string Print() //print to console, return string
         {
-            throw new NotImplementedException();
+            string print = "";
+            foreach (char a in Contents)
+            {
+                print += a;
+            }
+
+            Console.WriteLine(print);
+
+            return print;
         }
     }
 }
