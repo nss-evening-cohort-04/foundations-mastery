@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using FoundationsMastery.Interfaces;
+using System.Linq;
 
 namespace FoundationsMastery
 {
@@ -35,12 +36,7 @@ namespace FoundationsMastery
         {
             get
             {
-                string charString = null;
-                foreach(char x in contents)
-                {
-                    charString += x;
-                }
-                return charString.Length;
+                return contents.Count();
             }
         }
 
@@ -51,17 +47,53 @@ namespace FoundationsMastery
 
         public string Concat(IEnumerable<char> rhs)
         {
-            throw new NotImplementedException();
+            var concatResults = contents.Concat(rhs);
+            string charString = null;
+            foreach (char x in concatResults)
+            {
+                charString += x;
+            }
+            return charString;
         }
 
         public string Interleave(IEnumerable<char> rhs)
         {
-            throw new NotImplementedException();
+            CustomString myString = new CustomString();
+            char[] argArray = rhs.ToArray();
+            char[] contentArray = contents.ToArray();
+            int longerContainer;
+            char[] interleaveOutput = new char[argArray.Count() + contentArray.Count()];
+            string interleaveOutputString = null;
+
+            // Check which container is longer, to ensure all contents go through loop
+            if (argArray.Count() < contentArray.Count())
+            {
+                longerContainer = argArray.Count();
+            }
+            else
+            {
+                longerContainer = contentArray.Count();
+            }
+
+            var numbersAndWords = contentArray.Zip(argArray, (first, second) => first + "" + second);
+            //var sums = b.Zip(a, (x, y) => x + y).Concat(b.Skip(a.Count()));
+
+            foreach (string x in numbersAndWords)
+            {
+                interleaveOutputString += x;
+            }
+            return interleaveOutputString;
         }
 
         public string Print()
         {
-            throw new NotImplementedException();
+            string charString = null;
+            foreach (char x in contents)
+            {
+                charString += x;
+            }
+            Console.WriteLine("contents: " + charString);
+            return charString;
         }
     }
 }
