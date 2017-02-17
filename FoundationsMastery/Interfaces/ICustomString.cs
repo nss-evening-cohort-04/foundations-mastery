@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FoundationsMastery.Interfaces
 {
-    interface ICustomString
+     interface ICustomString
     {
         IEnumerable<char> Contents { set; get; }
         int Length { get; }
@@ -15,4 +15,5 @@ namespace FoundationsMastery.Interfaces
         void Clear();
         string Interleave(IEnumerable<char> rhs);
     }
+
 }
