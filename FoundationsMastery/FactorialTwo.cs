@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FoundationsMastery;
 
 namespace FoundationsMastery
 {
-    class Program
+    public class FactorialTwo : FactorialModel
     {
-        static void Main(string[] args)
-        { 
-
+        public override int Iterative(int n)
+        {
+            return base.Iterative(n);
         }
     }
 }

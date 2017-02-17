@@ -52,9 +52,17 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="CustomStringTests.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FactorialTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DogStringTests.cs" />
+    <Compile Include="CatStringTests.cs" />
+    <Compile Include="FactorialTwoTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FoundationsMastery\FoundationsMastery.csproj">
+      <Project>{18C518CE-2EC2-4035-8D2C-1A9D07AEDC5E}</Project>
+      <Name>FoundationsMastery</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

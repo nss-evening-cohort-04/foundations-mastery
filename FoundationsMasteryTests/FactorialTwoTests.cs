@@ -5,12 +5,12 @@ using FoundationsMastery;
 namespace FoundationsMasteryTests
 {
     [TestClass]
-    public class FactorialTests
+    public class FactorialTwoTests
     {
         [TestMethod]
         public void EnsureICanCreateAnInstance()
         {
-            FactorialModel factorial = new FactorialModel();
+            FactorialTwo factorial = new FactorialTwo();
 
             Assert.IsNotNull(factorial);
         }
@@ -18,7 +18,7 @@ namespace FoundationsMasteryTests
         [TestMethod]
         public void EnsureFactorialCalcInterative()
         {
-            FactorialModel factorial = new FactorialModel();
+            FactorialTwo factorial = new FactorialTwo();
 
             int expectedResult = 24;
             int actualResult = factorial.Iterative(4);
@@ -29,7 +29,7 @@ namespace FoundationsMasteryTests
         [TestMethod]
         public void EnsureFactorialCalcRecursive()
         {
-            FactorialModel factorial = new FactorialModel();
+            FactorialTwo factorial = new FactorialTwo();
 
             int expectedResult = 24;
             int actualResult = factorial.Recursive(4);
@@ -42,7 +42,7 @@ namespace FoundationsMasteryTests
         [ExpectedException(typeof(System.InvalidOperationException))]
         public void EnsureFactorialCalcRecursiveFails()
         {
-            FactorialModel factorial = new FactorialModel();
+            FactorialTwo factorial = new FactorialTwo();
 
             int actualResult = factorial.Recursive(0);
         }
@@ -52,7 +52,7 @@ namespace FoundationsMasteryTests
         [ExpectedException(typeof(System.InvalidOperationException))]
         public void EnsureFactorialCalcIterativeFails()
         {
-            FactorialModel factorial = new FactorialModel();
+            FactorialTwo factorial = new FactorialTwo();
 
             int actualResult = factorial.Iterative(0);
         }
