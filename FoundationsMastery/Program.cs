@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace FoundationsMastery
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
+            Child newChild = new Child();
+            newChild.EyeColor();
+            Console.WriteLine(newChild.name);
+            Console.ReadLine();
         }
     }
 }

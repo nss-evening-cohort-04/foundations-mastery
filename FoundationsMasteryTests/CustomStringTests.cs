@@ -44,11 +44,11 @@ namespace FoundationsMasteryTests
             CustomString myString = new CustomString(mychars);
 
             //Assert and Act Combined need to fix to make more clear
-            Assert.IsInstanceOfType(myString.Contents,typeof(IEnumerable<char>));
+            Assert.IsInstanceOfType(myString.Contents, typeof(IEnumerable<char>));
             Assert.AreEqual(myString.Length, mychars.Length);
             Assert.IsNotNull(myString.Contents);
             Assert.IsNotNull(mychars);
-            
+
             // Better version of test
             CollectionAssert.AreEqual(mychars.ToList(), myString.Contents.ToList());// Another way to test 
         }
@@ -89,7 +89,7 @@ namespace FoundationsMasteryTests
 
             //Act
             var expectedResult = "adbecf";
-            var actualResult = myString.Interleave(new char[] { 'd', 'e', 'f'}); 
+            var actualResult = myString.Interleave(new char[] { 'd', 'e', 'f' });
 
             //Assert
             Assert.AreEqual(expectedResult, actualResult);

@@ -41,7 +41,7 @@ namespace FoundationsMastery
             Contents = null;
         }
 
-        public string Concat(IEnumerable<char> rhs)//rhs == right hand side
+        public virtual string Concat(IEnumerable<char> rhs)//rhs == right hand side
         {
             string con = "";
 
@@ -53,11 +53,11 @@ namespace FoundationsMastery
             {
                 con += c;
             }
-         
+
             return con;
         }
 
-        public string Interleave(IEnumerable<char> rhs)
+        public virtual string Interleave(IEnumerable<char> rhs)
         {
             /*Did not work not sure why????
             var conListTest = Contents;
@@ -77,7 +77,7 @@ namespace FoundationsMastery
             for (int i = 0; i < length; i++)
             {
                 zipper += conList[i];
-                zipper += rhsList[i];   
+                zipper += rhsList[i];
 
             }
             return zipper;
