@@ -8,11 +8,12 @@ namespace FoundationsMastery.Interfaces
 {
     interface ICustomString
     {
-        IEnumerable<char> Contents { set; get; }
+        IEnumerable<char> Contents { get; set; }
         int Length { get; }
         string Print();
         string Concat(IEnumerable<char> rhs);
         void Clear();
         string Interleave(IEnumerable<char> rhs);
     }
+
 }
