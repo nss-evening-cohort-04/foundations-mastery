@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using FoundationsMastery;
 
 namespace FoundationsMasteryTests
 {
@@ -9,30 +10,46 @@ namespace FoundationsMasteryTests
         [TestMethod]
         public void EnsureICanCreateAnInstance()
         {
+            Factorial factorial = new Factorial();
+            Assert.IsNotNull(factorial);
         }
 
         [TestMethod]
         public void EnsureFactorialCalcInterative()
         {
+            Factorial factorial = new Factorial();
+            int expected = 120;
 
+            int actual = factorial.Iterative(5);
+
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
         public void EnsureFactorialCalcRecursive()
         {
+            Factorial factorial = new Factorial();
+            int expected = 120;
 
+            int actual = factorial.Recursive(5);
+
+            Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        //Hint: what goes here to say an exception is expected?
+        [ExpectedException(typeof(InvalidOperationException))]
         public void EnsureFactorialCalcRecursiveFails()
         {
+            Factorial factorial = new Factorial();
+            int result = factorial.Recursive(0);
         }
 
         [TestMethod]
-        //Hint: what goes here to say an exception is expected?
+       [ExpectedException(typeof(InvalidOperationException))]
         public void EnsureFactorialCalcIterativeFails()
         {
+            Factorial factorial = new Factorial();
+            int result = factorial.Iterative(0);
         }
     }
 }
