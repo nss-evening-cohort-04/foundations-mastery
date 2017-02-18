@@ -53,7 +53,14 @@ namespace FoundationsMastery
 
         public string Interleave(IEnumerable<char> rhs)
         {
-            throw new NotImplementedException();
+            var interleaved = Contents.Zip(rhs, (first, second) => first.ToString() + second.ToString());
+            var stringBuilder = new StringBuilder();
+            foreach (var boop in interleaved)
+            {
+                stringBuilder.Append(boop);
+            }
+
+            return stringBuilder.ToString();
         }
 
         public string Print()

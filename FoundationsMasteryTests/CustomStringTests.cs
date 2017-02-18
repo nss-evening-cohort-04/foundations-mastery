@@ -5,6 +5,7 @@ using FoundationsMastery;
 using System.Collections.Generic;
 using System.Collections;
 
+
 namespace FoundationsMasteryTests
 {
     [TestClass]
@@ -68,8 +69,7 @@ namespace FoundationsMasteryTests
         [TestMethod]
         public void EnsureStringConcatenation()
         {
-            //Arrange
-            
+            //Arrange 
             var theFirst = new char[] { 'd', 'i', 'n', 'o'};
             var theSecond = new char[] {'5', '6', '7', '8' };
             CustomString baseString = new CustomString(theFirst);
@@ -80,6 +80,22 @@ namespace FoundationsMasteryTests
 
             //Assert
             Assert.AreEqual("dino5678", concatString);
+        }
+
+        [TestMethod]
+        public void EnsureInterleaving()
+        {
+            //Arrange
+            var theFirst = new char[] { 'd', 'i', 'n', 'o' };
+            var theSecond = new char[] { '5', '6', '7', '8' };
+            CustomString baseString = new CustomString(theFirst);
+            CustomString stringToAdd = new CustomString(theSecond);
+
+            //Act
+            string interleavedString = baseString.Interleave(stringToAdd.Contents);
+
+            //Assert
+            Assert.AreEqual("d5i6n7o8", interleavedString);
 
 
         }
