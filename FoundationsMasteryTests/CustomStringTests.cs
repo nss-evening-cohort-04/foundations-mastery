@@ -48,24 +48,24 @@ namespace FoundationsMasteryTests
         [TestMethod]
         public void EnsureClearAlwaysSetsEmptyContents()
         {
-            //char[] mychars = new char[] { 'a', 'b', 'c' };
-            //CustomString myString = new CustomString(mychars);
+            char[] mychars = new char[] { 'a', 'b', 'c' };
+            CustomString myString = new CustomString(mychars);
 
-            //int expected_sum = 0;
-            //myString.Clear();
-            //int actual_sum = (from content in myString.Contents select content).Cout
+            int expected_sum = 0;
+            myString.Clear();
+            int actual_sum = myString.Contents.Count();
 
-            //Assert.AreEqual(expected_sum, test);
+            Assert.AreEqual(expected_sum, actual_sum);
         }
 
         [TestMethod]
         public void EnsureICanConcat ()
         {
-            char[] mychars = new char[] { 'a', 'b', 'c', 'd' };
+            char[] mychars = new char[] { 'a', 'b', 'c' };
             CustomString myString = new CustomString(mychars);
 
-            string expected_string = "abcdefgh";
-            string actual_string = myString.Concat(new char[] { 'e', 'f', 'g', 'h' });
+            string expected_string = "abcdef";
+            string actual_string = myString.Concat(new char[] { 'd', 'e', 'f' });
 
             Assert.AreEqual(expected_string, actual_string);
         }
@@ -73,11 +73,11 @@ namespace FoundationsMasteryTests
         [TestMethod]
         public void EnsureICanInterleave()
         {
-            char[] mychars = new char[] { 'a', 'e','b','f','c','g','d','h' };
+            char[] mychars = new char[] { 'a','b','c' };
             CustomString myString = new CustomString(mychars);
 
-            string expected_string = "abcdefgh";
-            string actual_string = myString.Interleave(mychars);
+            string expected_string = "adbecf";
+            string actual_string = myString.Interleave(new char[] { 'd','e','f'});
 
             Assert.AreEqual(expected_string, actual_string);
         }

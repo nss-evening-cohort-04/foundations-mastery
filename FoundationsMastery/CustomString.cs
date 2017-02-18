@@ -9,36 +9,24 @@ namespace FoundationsMastery
 {
     public class CustomString : ICustomString
     {
-
         public CustomString (char [] userPassedArray)
         {
-            this.Contents = userPassedArray;
+            Contents = userPassedArray;
         }
 
-        public IEnumerable<char> Contents
-        {
-            get
-            {
-                return Contents;
-            }
-
-            set
-            {
-                this.Contents = value;
-            }
-        }
+        public IEnumerable<char> Contents { get; set; }
 
         public int Length
         {
             get
             {
-                return this.Contents.Count();
+                return Contents.Count();
             }
         }
 
-        public void Clear()
+        public virtual void Clear()
         {
-            this.Contents = new char[this.Contents.ToString().Length];
+           Contents = new char[] { };
         }
 
         public string Concat(IEnumerable<char> rhs)
@@ -49,24 +37,35 @@ namespace FoundationsMastery
 
         public string Interleave(IEnumerable<char> rhs)
         {
-            string userString = new string(rhs.ToArray());
-            string oddChars = "";
-            string evenChars ="";
-            for(int i = 0; i < rhs.Count(); i++)
+            int maxStringLength = 0;
+            string string1 = new string(Contents.ToArray());
+            string string2 = new string(rhs.ToArray());
+            string newString = "";
+            if (Contents.Count() > rhs.Count())
             {
-                if(i%2 != 0)
+                maxStringLength = Contents.Count();
+            }
+            else
+            {
+                maxStringLength = rhs.Count();
+            }
+
+            for (int i = 0; i <= maxStringLength; i++)
+            {
+                if (i < string1.Length)
                 {
-                    oddChars += userString.Substring(i,1);
+                    newString += string1[i];
                 }
-                else
+                if (i < string2.Length)
                 {
-                    evenChars += userString.Substring(i, 1);
+                    newString += string2[i];
                 }
             }
-            return evenChars + oddChars;
+            return newString;
+            
         }
 
-        public string Print()
+        public virtual string Print()
         {
             return new string(Contents.ToArray());
         }
