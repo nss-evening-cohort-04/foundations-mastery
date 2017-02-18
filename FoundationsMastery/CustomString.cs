@@ -26,6 +26,7 @@ namespace FoundationsMastery
             }
             set
             {
+                
                 mychars = value.ToArray();
             }
         }
@@ -33,31 +34,52 @@ namespace FoundationsMastery
         {
             get
             {
-                throw new NotImplementedException();
+                return mychars.Length;
             }
         }
         public void Clear()
         {
-            Contents = new List<char>();
-            Contents.ToList().Clear();
+            mychars = new char[0];
         }
 
         public string Concat(IEnumerable<char> rhs)
         {
-            string concat = "";
-            concat += Print();
+            var concatString = "";
 
-                return concat;
-;        }
+            foreach (var instance in Contents )
+            {
+                concatString += instance;
+            }
+            foreach (var instance in rhs)
+            {
+                concatString += instance;
+            }
+            return concatString;
+        }
 
         public string Interleave(IEnumerable<char> rhs)
         {
-            throw new NotImplementedException();
+            var lhs = Contents.ToList();
+            var nextRhs = rhs.ToList();
+            var finalDestination = new char[lhs.Count() + nextRhs.Count()];
+
+            for (int i = 0; i < Length; i++)
+            {
+                finalDestination[i * 2] = lhs[i];
+            }
+
+            for (int i = 0; i < nextRhs.Count(); i++)
+            {
+                finalDestination[(i * 2) + 1] = nextRhs[i];
+            }
+
+            return String.Join("", finalDestination);
+
         }
 
         public string Print()
         {
-            throw new NotImplementedException();
+            return String.Join("", Contents);
         }
     }
 }
