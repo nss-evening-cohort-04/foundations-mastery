@@ -17,5 +17,11 @@
         {
             numberOfWheels = numWheels;
         }
+
+        public override string PrintFacts()
+        {
+            string motorcycleFacts = "A motorcycle (also called a motorbike, bike, or cycle) is a two or three-wheeled motor vehicle.";
+            return motorcycleFacts;
+        }
     }
 }

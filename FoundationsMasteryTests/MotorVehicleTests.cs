@@ -64,6 +64,17 @@ namespace FoundationsMasteryTests
         }
 
         [TestMethod]
+        public void EnsureICanPrintMotorVehicleFacts()
+        {
+            MotorVehicle motorVehicle = new MotorVehicle();
+
+            var expectedResult = "A motor vehicle is a self-propelled road vehicle and off-road vehicle, commonly wheeled, that does not operate on rails, such as trains or trams and used for commercial purposes on the highways in the transportation of passengers, or passengers and property.";
+            var actualResult = motorVehicle.PrintFacts();
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void EnsureBadFuelTypeFails()
         {

@@ -88,6 +88,17 @@ namespace FoundationsMasteryTests
         }
 
         [TestMethod]
+        public void EnsureICanPrintMotorcycleFacts()
+        {
+            Motorcycle motorcycle = new Motorcycle();
+
+            string expectedResult = "A motorcycle (also called a motorbike, bike, or cycle) is a two or three-wheeled motor vehicle.";
+            string actualResult = motorcycle.PrintFacts();
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void EnsureBadMotorcycleFuelTypeFails()
         {

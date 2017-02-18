@@ -39,5 +39,11 @@ namespace FoundationsMastery
         {
             fuelTankCapacity = capacity;
         }
+
+        public virtual string PrintFacts()
+        {
+            string facts = "A motor vehicle is a self-propelled road vehicle and off-road vehicle, commonly wheeled, that does not operate on rails, such as trains or trams and used for commercial purposes on the highways in the transportation of passengers, or passengers and property.";
+            return facts;
+        }
     }
 }
