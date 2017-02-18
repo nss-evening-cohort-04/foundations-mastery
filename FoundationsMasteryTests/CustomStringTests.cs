@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FoundationsMastery;
+using System.Linq;
 
 namespace FoundationsMasteryTests
 {
@@ -23,7 +24,7 @@ namespace FoundationsMasteryTests
         {
             //arrange
             char[] mychars = new char[] { 'a', 'b', 'c' };
-            //CustomString myString = new CustomString(mychars);
+            CustomString myString = new CustomString(mychars);
 
             //act
             int expected_length = 3;
@@ -42,11 +43,11 @@ namespace FoundationsMasteryTests
 
             //act
             int expected_length = 3;
-            int actual_length = mychars.Length;
+            int actual_length = myString.Length;
 
             //assert
             Assert.AreEqual(expected_length, actual_length);
-            Assert.AreNotSame(mychars, myString);
+            Assert.AreNotEqual(mychars, myString);
         }
 
         [TestMethod]
@@ -55,18 +56,46 @@ namespace FoundationsMasteryTests
             //arrange
             char[] mychars = new char[] { 'a', 'b', 'c' };
             CustomString myString = new CustomString(mychars);
-            CustomString myStringNotNull = new CustomString(mychars);
+            Assert.IsNotNull(myString.Contents);
+            Assert.AreEqual(3, myString.Length);
 
             //act
+           // int expectedContents = 0;
             myString.Clear();
 
             //assert
-            Assert.IsNull(myString.Contents);
-            Assert.IsNotNull(myStringNotNull.Contents);
+            Assert.AreEqual(0, myString.Length);
         }
-    }
+
+        [TestMethod]
+        public void EnsureCanConcat()
+        {   //arrange
+            CustomString myString = new CustomString(new char[] { 'a', 'b', 'c' });
+
+            //act
+            var expecting = "abcdef";
+            var actuality = myString.Concat(new char[] { 'd', 'e', 'f' });
+
+            //assert
+            Assert.AreEqual(expecting, actuality);
+        }
+
+        [TestMethod]
+        public void EnsureCanInterleave()
+        {
+
+        }
+
+        [TestMethod]
+        public void EnureCanPrint()
+        {
+
+        }
+
+
 
         public interface ICustomString
         {
+        }
     } 
 }

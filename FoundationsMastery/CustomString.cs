@@ -24,12 +24,12 @@ namespace FoundationsMastery
         {
             get
             {
-                throw new NotImplementedException();
+                return mychars;
             }
 
             set
             {
-                char[] mychars = new char[] { 'a', 'b', 'c' };
+                mychars = value.ToArray();
             }
         }
 
@@ -37,13 +37,13 @@ namespace FoundationsMastery
         {
             get
             {
-                throw new NotImplementedException();
+                return mychars.Length;
             }
         }
 
         public void Clear()
         {
-            throw new NotImplementedException();
+            mychars = new char[] { };
         }
 
         public string Concat(IEnumerable<char> rhs)
