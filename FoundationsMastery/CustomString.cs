@@ -10,7 +10,7 @@ namespace FoundationsMastery
     {
 
         //private string myCustomString;
-        private List<char> myCustomString = new List<char>() {'a','b','c'};
+        private List<char> listOfChars = new List<char>() {'a','b','c'};
         
         //List<char> mychars2 = new List<char>() { 'a', 'b', 'c' };
 
@@ -18,12 +18,12 @@ namespace FoundationsMastery
         {
             get
             {
-                return myCustomString;//.AsEnumerable<char>();
+                return listOfChars;//.AsEnumerable<char>();
             }
 
             set
             {
-                myCustomString = value.ToList();
+                listOfChars = value.ToList();
             }
         }
 
