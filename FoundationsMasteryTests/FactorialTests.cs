@@ -38,14 +38,20 @@ namespace FoundationsMasteryTests
 
         [TestMethod]
         //Hint: what goes here to say an exception is expected?
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void EnsureFactorialCalcRecursiveFails()
         {
+            Factorial myFactorial = new Factorial();
+            myFactorial.Recursive(0);
         }
 
         [TestMethod]
         //Hint: what goes here to say an exception is expected?
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void EnsureFactorialCalcIterativeFails()
         {
+            Factorial myFactorial = new Factorial();
+            myFactorial.Iterative(-1);
         }
     }
 }
