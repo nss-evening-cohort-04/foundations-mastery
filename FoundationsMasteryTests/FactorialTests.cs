@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using FoundationsMastery.Interfaces;
 
 namespace FoundationsMasteryTests
 {
@@ -9,30 +10,40 @@ namespace FoundationsMasteryTests
         [TestMethod]
         public void EnsureICanCreateAnInstance()
         {
+            Factorial factorial = new Factorial();
+
+            Assert.IsNotNull(factorial);
         }
 
-        [TestMethod]
+        /*[TestMethod]
         public void EnsureFactorialCalcInterative()
         {
+            //Assert
+            Factorial factorial = new Factorial();
+            int n = 5;
 
-        }
+            //Act
+            expected_result = 120;
 
-        [TestMethod]
+            //Assert
+        }*/
+
+        /*[TestMethod]
         public void EnsureFactorialCalcRecursive()
         {
 
-        }
+        }*/
 
-        [TestMethod]
+        /*[TestMethod]
         //Hint: what goes here to say an exception is expected?
         public void EnsureFactorialCalcRecursiveFails()
         {
-        }
+        }*/
 
-        [TestMethod]
+        /*[TestMethod]
         //Hint: what goes here to say an exception is expected?
         public void EnsureFactorialCalcIterativeFails()
         {
-        }
+        }*/
     }
 }
