@@ -32,25 +32,16 @@ namespace FoundationsMasteryTests
             Assert.IsNotNull(testString);
         }
 
-        /*[TestMethod]
-        public void EnsureContentsIsNeverNull()
-        {
-            CustomString testString = new CustomString(new List<char>());
-            //IEnumerable<>
-            //more code i forgot
-
-        }*/
-
         [TestMethod]
         public void EnsureICanPassInACharEnumerable()
         {
             char[] mychars = new char[] { 'a', 'b', 'c' };
             CustomString myString = new CustomString(mychars);
 
-            int expected_length = 3;
-            int actual_length = myString.Length;
+            int expectedLength = 3;
+            int actualLength = myString.Length;
 
-            Assert.AreEqual(expected_length, actual_length);
+            Assert.AreEqual(expectedLength, actualLength);
         }
 
         [TestMethod]
@@ -59,16 +50,10 @@ namespace FoundationsMasteryTests
             char[] mychars = new char[] { 'a', 'b', 'c' };
             CustomString myString = new CustomString(mychars);
 
-            //public IEnumerable<char> Contents;
-            //Contents testContents = new Contents;
             var expected = typeof(IEnumerable<char>);
             var actual = myString.Contents.GetType();
 
-
-            // 1. Assert that the Contents property is the correct 'type'
             Assert.IsInstanceOfType(myString.Contents, typeof(IEnumerable<char>));
-
-            // 2. Assert that the returned Contents is the correct length
             Assert.AreEqual(myString.Length, mychars.Length);
 
             Assert.IsNotNull(myString.Contents);
@@ -82,7 +67,42 @@ namespace FoundationsMasteryTests
 
             myString.Clear();
 
-            // How do you ensure your clear function works?
+        }
+
+        [TestMethod]
+        public void EnsureICanConcat()
+        {
+            char[] mychars = new char[] { 'a', 'b', 'c' };
+            CustomString myString = new CustomString(mychars);
+
+            var expectedResult = "abcdef";
+            var actualResult = myString.Concat(new char[] {'d', 'e', 'f' });
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestMethod]
+        public void EnsureICanInterleave()
+        {
+            char[] mychars = new char[] { 'a', 'b', 'c' };
+            CustomString myString = new CustomString(mychars);
+
+            var expectedResult = "adbecf";
+            var actualResult = myString.Interleave(new char[] { 'd', 'e', 'f' });
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestMethod]
+        public void EnsureICanPrint()
+        {
+            char[] mychars = new char[] { 'a', 'b', 'c' };
+            CustomString myString = new CustomString(mychars);
+
+            var expectedResult = "abc";
+            var actualResult = myString.Print();
+
+            Assert.AreEqual(expectedResult, actualResult);
         }
     }
 }
