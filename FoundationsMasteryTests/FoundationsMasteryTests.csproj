@@ -56,6 +56,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FactorialTests.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FoundationsMastery\FoundationsMastery.csproj">
+      <Project>{18c518ce-2ec2-4035-8d2c-1a9d07aedc5e}</Project>
+      <Name>FoundationsMastery</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
