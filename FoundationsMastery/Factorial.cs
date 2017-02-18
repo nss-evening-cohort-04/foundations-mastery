@@ -28,7 +28,12 @@ namespace FoundationsMastery
 
         public int Recursive(int n)
         {
-            return (n == 0) ? 0 = Recursive(n - 1) + n ;
+            //return (n == 0) ? 0 = Recursive(n - 1) + n ;
+            if (n == 0)
+            {
+                return 1;
+            }
+            return n * Recursive(n - 1);
         }
     }
 }

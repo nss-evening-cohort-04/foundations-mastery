@@ -11,32 +11,32 @@ namespace FoundationsMastery
     {
         static void Main(string[] args)
         {
-            CustomString contents = new CustomString();
+            //CustomString contents = new CustomString();
 
-            char[] mychars = { 'a', 'b', 'c' };
+            //char[] mychars = { 'a', 'b', 'c' };
 
-            List<char> mychars2 = new List<char>() { 'a', 'b', 'c' };
+            //List<char> mychars2 = new List<char>() { 'a', 'b', 'c' };
 
-            // CustomString.Concat(mychars);
+            //// CustomString.Concat(mychars);
 
-            int x = 0;
+            //int x = 0;
 
-            contents.Output();
+            //contents.Output();
 
-            while (true)
-            {
-                Console.WriteLine($"[{x}]>");
-                Console.WriteLine("this is a test2");
-                // increment number of times using program
-                x++;
-                // user passed expression
-                string input = Console.ReadLine();
-                if (input.ToLower() == "quit" || input.ToLower() == "exit")
-                {
-                    Console.WriteLine("Bye!");
-                    break;
-                }
-            }
+            //while (true)
+            //{
+            //    Console.WriteLine($"[{x}]>");
+            //    Console.WriteLine("this is a test2");
+            //    // increment number of times using program
+            //    x++;
+            //    // user passed expression
+            //    string input = Console.ReadLine();
+            //    if (input.ToLower() == "quit" || input.ToLower() == "exit")
+            //    {
+            //        Console.WriteLine("Bye!");
+            //        break;
+            //    }
+            //}
         }
     }
 }

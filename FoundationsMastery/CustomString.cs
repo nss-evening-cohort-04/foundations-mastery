@@ -10,7 +10,7 @@ namespace FoundationsMastery
     {
 
         //private string myCustomString;
-        private List<char> listOfChars = new List<char>() {'a','b','c'};
+        //private List<char> listOfChars = new List<char>() {'a','b','c'};
         
         //List<char> mychars2 = new List<char>() { 'a', 'b', 'c' };
 
@@ -18,12 +18,14 @@ namespace FoundationsMastery
         {
             get
             {
-                return listOfChars;//.AsEnumerable<char>();
+                //return listOfChars;//.AsEnumerable<char>();
+                return Contents;
             }
 
             set
             {
-                listOfChars = value.ToList();
+                Contents = value;
+               // listOfChars = value.ToList();
             }
         }
 
@@ -31,6 +33,11 @@ namespace FoundationsMastery
         {
             get
             {
+                //.length or .Length.ToString
+                //string str = null;
+                //str = "This is a Test";
+                //MessageBox.Show(str.Length.ToString());
+
                 //lenghth of contents
                 //int result = 0;
                 //while (Contents.MoveNext())
@@ -53,6 +60,14 @@ namespace FoundationsMastery
         {
             //combines with string in contents to the string in rhs
             //adds string A + string B = string C
+
+            //string str1 = null;
+            //string str2 = null;
+
+            //str1 = "Concat() ";
+            //str2 = "Test";
+            //MessageBox.Show(string.Concat(str1, str2));
+
             throw new NotImplementedException();
         }
 
