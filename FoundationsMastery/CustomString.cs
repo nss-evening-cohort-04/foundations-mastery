@@ -10,24 +10,40 @@ namespace FoundationsMastery
     {
 
         //private string myCustomString;
-        //private List<char> listOfChars = new List<char>() {'a','b','c'};
-        
+        private List<char> listOfChars = new List<char>() {'a','b','c'};
+
         //List<char> mychars2 = new List<char>() { 'a', 'b', 'c' };
 
         public IEnumerable<char> Contents
         {
             get
             {
-                //return listOfChars;//.AsEnumerable<char>();
-                return Contents;
+                return listOfChars; //AsEnumerable<char>();
+                //return Contents;
             }
 
             set
             {
-                Contents = value;
-               // listOfChars = value.ToList();
+                //Contents = new char[] { 'a', 'b', 'c' };
+                //Contents = value;
+                listOfChars = value.ToList();
             }
         }
+
+        //public IEnumerable<char> Contents(char[] value)
+        //{
+        //    get
+        //    {
+        //        //return listOfChars;//.AsEnumerable<char>();
+        //        return Contents;
+        //    }
+
+        //    set
+        //    {
+        //        Contents = value;
+        //        //listOfChars = value.ToList();
+        //    }
+        //}
 
         public int Length
         {
@@ -45,7 +61,16 @@ namespace FoundationsMastery
                 //    result++;
                 //}
                 //return result;
-                throw new NotImplementedException();
+                //throw new NotImplementedException();
+
+                return 5;
+
+                //int counter = 0;
+                //foreach (var e in Contents)
+                //{
+
+                //}
+
             }
         }
 

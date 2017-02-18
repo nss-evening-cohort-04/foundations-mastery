@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FoundationsMastery;
+using System.Collections.Generic;
 
 namespace FoundationsMasteryTests
 {
@@ -10,20 +11,20 @@ namespace FoundationsMasteryTests
         [TestMethod]
         public void EnsureICanCreateAnInstance()
         {
-            CustomString contents = new CustomString();
+            CustomString myString = new CustomString();
 
-            Assert.IsNotNull(contents);
+            Assert.IsNotNull(myString);
         }
 
         [TestMethod]
         public void EnsureICanPassInACharEnumerable()
         {
             char[] mychars = new char[] { 'a', 'b', 'c' };
-            //CustomString myString = new CustomString(mychars);
             CustomString myString = new CustomString();
+            //CustomString myString = new CustomString();
 
-            char expected_length = 'a';
-            char actual_length = 'a';
+            int expected_length = 5;
+            int actual_length = myString.Length;
 
             Assert.AreEqual(expected_length, actual_length);
         }
@@ -36,7 +37,7 @@ namespace FoundationsMasteryTests
             myString.Contents = mychars;
 
             string expected_contents = "a, b, c";
-            string actual_contents = myString.Contents;
+            IEnumerable<char> actual_contents = myString.Contents;
 
             Assert.AreEqual(expected_contents, actual_contents);
 
