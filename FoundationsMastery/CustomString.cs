@@ -1,6 +1,6 @@
-﻿using System;
+﻿using FoundationsMastery.Interfaces;
+using System;
 using System.Collections.Generic;
-using FoundationsMastery.Interfaces;
 using System.Linq;
 
 namespace FoundationsMastery

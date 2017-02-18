@@ -1,5 +1,5 @@
-﻿using System;
-using FoundationsMastery.Interfaces;
+﻿using FoundationsMastery.Interfaces;
+using System;
 
 namespace FoundationsMastery
 {

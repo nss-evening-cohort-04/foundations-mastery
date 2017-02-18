@@ -47,6 +47,8 @@
     <Compile Include="CustomString.cs" />
     <Compile Include="Interfaces\IFactorial.cs" />
     <Compile Include="Interfaces\ICustomString.cs" />
+    <Compile Include="Motorcycle.cs" />
+    <Compile Include="MotorVehicle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

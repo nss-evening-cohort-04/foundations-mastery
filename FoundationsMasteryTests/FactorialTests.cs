@@ -1,6 +1,6 @@
-﻿using System;
+﻿using FoundationsMastery;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FoundationsMastery;
+using System;
 
 namespace FoundationsMasteryTests
 {
