@@ -8,9 +8,15 @@ namespace FoundationsMastery
 {
     public class CustomString : Interfaces.ICustomString
     {
+        private IEnumerable<char> _Contents;
+
+        public CustomString(IEnumerable<char> Contents)
+        {
+            _Contents = Contents;
+        }
 
         //private string myCustomString;
-        private List<char> listOfChars = new List<char>() {'a','b','c'};
+        //private List<char> listOfChars = new List<char>() {'a','b','c'};
 
         //List<char> mychars2 = new List<char>() { 'a', 'b', 'c' };
 
@@ -18,18 +24,21 @@ namespace FoundationsMastery
         {
             get
             {
-                return listOfChars; //AsEnumerable<char>();
-                //return Contents;
+                //return listOfChars; //AsEnumerable<char>();
+                return _Contents;
             }
 
             set
             {
                 //Contents = new char[] { 'a', 'b', 'c' };
-                //Contents = value;
-                listOfChars = value.ToList();
+                _Contents = value;
+                //listOfChars = value.ToList();
             }
         }
 
+
+
+        //attempt to overload to accept testing pass through
         //public IEnumerable<char> Contents(char[] value)
         //{
         //    get
@@ -68,8 +77,9 @@ namespace FoundationsMastery
                 //int counter = 0;
                 //foreach (var e in Contents)
                 //{
-
+                //    counter++;
                 //}
+                //return e;
 
             }
         }
@@ -89,11 +99,14 @@ namespace FoundationsMastery
             //string str1 = null;
             //string str2 = null;
 
+            throw new NotImplementedException();
+
             //str1 = "Concat() ";
             //str2 = "Test";
             //MessageBox.Show(string.Concat(str1, str2));
-
-            throw new NotImplementedException();
+            //CustomString(mychars);
+            //string SomeString = CustomString.Concat(new char[] { 'a', 'b', 'c' });
+            //return  SomeString + rhs;
         }
 
         public string Interleave(IEnumerable<char> rhs)

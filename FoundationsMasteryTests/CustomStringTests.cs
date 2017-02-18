@@ -11,7 +11,8 @@ namespace FoundationsMasteryTests
         [TestMethod]
         public void EnsureICanCreateAnInstance()
         {
-            CustomString myString = new CustomString();
+            char[] mychars = new char[] { 'a', 'b', 'c' };
+            CustomString myString = new CustomString(mychars);
 
             Assert.IsNotNull(myString);
         }
@@ -20,10 +21,10 @@ namespace FoundationsMasteryTests
         public void EnsureICanPassInACharEnumerable()
         {
             char[] mychars = new char[] { 'a', 'b', 'c' };
-            CustomString myString = new CustomString();
+            CustomString myString = new CustomString(mychars);
             //CustomString myString = new CustomString();
 
-            int expected_length = 5;
+            int expected_length = 3;
             int actual_length = myString.Length;
 
             Assert.AreEqual(expected_length, actual_length);
@@ -33,7 +34,7 @@ namespace FoundationsMasteryTests
         public void EnsureIHaveContents()
         {
             char[] mychars = new char[] { 'a', 'b', 'c' };
-            CustomString myString = new CustomString();
+            CustomString myString = new CustomString(mychars);
             myString.Contents = mychars;
 
             string expected_contents = "a, b, c";
