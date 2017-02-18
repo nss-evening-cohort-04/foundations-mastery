@@ -15,52 +15,25 @@ namespace FoundationsMastery
             this.Contents = Contents;
         }
 
-        //private string myCustomString;
-        //private List<char> listOfChars = new List<char>() {'a','b','c'};
-
-        //List<char> mychars2 = new List<char>() { 'a', 'b', 'c' };
-
         public IEnumerable<char> Contents
         {
             get
             {
-                //return listOfChars; //AsEnumerable<char>();
                 return _Contents;
             }
 
             set
             {
-                //Contents = new char[] { 'a', 'b', 'c' };
-                _Contents = value;
-                //listOfChars = value.ToList();
+                 _Contents = value;
             }
         }
 
-
-
-        //attempt to overload to accept testing pass through
-        //public IEnumerable<char> Contents(char[] value)
-        //{
-        //    get
-        //    {
-        //        //return listOfChars;//.AsEnumerable<char>();
-        //        return Contents;
-        //    }
-
-        //    set
-        //    {
-        //        Contents = value;
-        //        //listOfChars = value.ToList();
-        //    }
-        //}
 
         public int Length
         {
             get
             {
-
                 return Contents.Count();
-
             }
         }
 
@@ -72,7 +45,7 @@ namespace FoundationsMastery
 
         public string Concat(IEnumerable<char> rhs)
         {
-            //combines with string in contents to the string in rhs
+            //combines with string in contents with the string in rhs
             //adds string A + string B = string C
 
             List<char> listContents = Contents.ToList(); //abc
@@ -84,65 +57,35 @@ namespace FoundationsMastery
             //string result = concatList.ToString();
 
             return result;
-
-
-            //string str1 = null;
-            //string str2 = null;
-
-            //str1 = "Concat() ";
-            //str2 = "Test";
-            //MessageBox.Show(string.Concat(str1, str2));
-            //CustomString(mychars);
-            //string SomeString = CustomString.Concat(new char[] { 'a', 'b', 'c' });
-            //return  SomeString + rhs;
         }
 
         public string Interleave(IEnumerable<char> rhs)
         {
-            //"http://algorithmsandme.in/2014/05/if-string-is-interleaved-of-two-strings/"
-            // string C = contents of string A and string B
-            // if length passes check first char C with A, then 2nd then 3rd, repeat with B using loop until pass/fail
+            //string a = a,b,c
+            //string b = x,y,z
+            //result = axbycz
 
-            //turn into list
+            //turn into two list
             List<char> listContents = Contents.ToList();
             List<char> listrhs = rhs.ToList();
-
-            //loop with ifs?
-
-            //var numbersAndWords = numbers.Zip(words, (first, second) => first + " " + second);
             //string.format("{0}{1}", first, second) or $"{first}{second}"
             List<string> zipString = listContents.Zip(listrhs,(char first, char second) => first.ToString() +  second.ToString()).ToList();
 
             string result = "";
-            // foreach (var item in numbersAndWords)
+
             foreach (var item in zipString)
             {
                  result += item;
             }
 
-            //string result = 
-
             return result;
 
-                //string a = a,b,c
-                //string b = x,y,z
-
-                //result = axbycz
-
-                throw new NotImplementedException();
         }
 
-        //public void Output()
-        //{
-        //    //prints result
-        //    //returns string result
-        //    Console.WriteLine(Contents);
-        //}
 
         public string Print()
         {
             string result = string.Concat(Contents);
-            //string result = concatList.ToString();
 
             return result;
         }
