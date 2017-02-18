@@ -18,10 +18,14 @@ namespace FoundationsMastery
 
         public int Iterative(int n)
         {
-            int sum = 0;
-            for(int i = 0; i <= n; i++)
+            if (n <= 0)
             {
-                sum += i;
+                throw new ArgumentException();
+            }
+            int sum = 1;
+            for(int i = 1; i <= n; i++)
+            {
+                sum *= i;
             }
             return sum;
         }
@@ -29,7 +33,11 @@ namespace FoundationsMastery
         public int Recursive(int n)
         {
             //return (n == 0) ? 0 = Recursive(n - 1) + n ;
-            if (n == 0)
+            if(n <= 0)
+            {
+                throw new ArgumentException();
+            }
+            if (n == 1)
             {
                 return 1;
             }

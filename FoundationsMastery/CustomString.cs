@@ -12,7 +12,7 @@ namespace FoundationsMastery
 
         public CustomString(IEnumerable<char> Contents)
         {
-            _Contents = Contents;
+            this.Contents = Contents;
         }
 
         //private string myCustomString;
@@ -58,37 +58,16 @@ namespace FoundationsMastery
         {
             get
             {
-                //.length or .Length.ToString
-                //string str = null;
-                //str = "This is a Test";
-                //MessageBox.Show(str.Length.ToString());
 
-                //lenghth of contents
-                //int result = 0;
-                //while (Contents.MoveNext())
-                //{
-                //    result++;
-                //}
-                //return result;
-                //throw new NotImplementedException();
-
-                return 5;
-
-                //int counter = 0;
-                //foreach (var e in Contents)
-                //{
-                //    counter++;
-                //}
-                //return e;
+                return Contents.Count();
 
             }
         }
 
         public void Clear()
-        {   
-            //clear Contents method
-            //clears all enter strings?
-            throw new NotImplementedException();
+        {
+            //clear Contents
+            Contents = new List<char>();
         }
 
         public string Concat(IEnumerable<char> rhs)
@@ -96,10 +75,19 @@ namespace FoundationsMastery
             //combines with string in contents to the string in rhs
             //adds string A + string B = string C
 
+            List<char> listContents = Contents.ToList(); //abc
+            List<char> listrhs = rhs.ToList(); //xyz
+
+            List<char> concatList = listContents.Concat(listrhs).ToList();
+
+            string result = string.Concat(concatList);
+            //string result = concatList.ToString();
+
+            return result;
+
+
             //string str1 = null;
             //string str2 = null;
-
-            throw new NotImplementedException();
 
             //str1 = "Concat() ";
             //str2 = "Test";
@@ -115,26 +103,48 @@ namespace FoundationsMastery
             // string C = contents of string A and string B
             // if length passes check first char C with A, then 2nd then 3rd, repeat with B using loop until pass/fail
 
-            //string a = 1,2,3
-            //string b = a,b,c
+            //turn into list
+            List<char> listContents = Contents.ToList();
+            List<char> listrhs = rhs.ToList();
 
-            //result = 1a2b3c
+            //loop with ifs?
 
-            throw new NotImplementedException();
+            //var numbersAndWords = numbers.Zip(words, (first, second) => first + " " + second);
+            //string.format("{0}{1}", first, second) or $"{first}{second}"
+            List<string> zipString = listContents.Zip(listrhs,(char first, char second) => first.ToString() +  second.ToString()).ToList();
+
+            string result = "";
+            // foreach (var item in numbersAndWords)
+            foreach (var item in zipString)
+            {
+                 result += item;
+            }
+
+            //string result = 
+
+            return result;
+
+                //string a = a,b,c
+                //string b = x,y,z
+
+                //result = axbycz
+
+                throw new NotImplementedException();
         }
 
-        public void Output()
-        {
-            //prints result
-            //returns string result
-            Console.WriteLine(Contents);
-        }
+        //public void Output()
+        //{
+        //    //prints result
+        //    //returns string result
+        //    Console.WriteLine(Contents);
+        //}
 
         public string Print()
         {
-            //prints result
-            //returns string result
-            throw new NotImplementedException();
+            string result = string.Concat(Contents);
+            //string result = concatList.ToString();
+
+            return result;
         }
     }
 }

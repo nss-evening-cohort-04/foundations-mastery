@@ -8,7 +8,7 @@ namespace FoundationsMasteryTests
     public class FactorialTests
     {
         [TestMethod]
-        public void EnsureICanCreateAnInstance()
+        public void CreateAnInstance()
         {
             Factorial factorialTest = new Factorial();
 
@@ -16,18 +16,18 @@ namespace FoundationsMasteryTests
         }
 
         [TestMethod]
-        public void EnsureFactorialCalcInterative()
+        public void FactorialCalcInterative()
         {
             Factorial interativeTest = new Factorial();
 
-            int expected_sum = 1;
-            int actual_sum = interativeTest.Iterative(1);
+            int expected_sum = 24;
+            int actual_sum = interativeTest.Iterative(4);
 
             Assert.AreEqual(expected_sum, actual_sum);
         }
 
         [TestMethod]
-        public void EnsureFactorialCalcRecursive()
+        public void FactorialCalcRecursive()
         {
             Factorial recursiveTest = new Factorial();
 
@@ -40,27 +40,20 @@ namespace FoundationsMasteryTests
         [TestMethod]
         //Hint: what goes here to say an exception is expected?
         [ExpectedException(typeof(ArgumentException), "n = 0")]
-        public void EnsureFactorialCalcRecursiveFails()
+        public void FactorialCalcRecursiveFails()
         {
             Factorial interativeTest = new Factorial();
-
-            int expected_sum = 0;
             int actual_sum = interativeTest.Iterative(0);
 
-            Assert.AreEqual(expected_sum, actual_sum);
         }
 
         [TestMethod]
         //Hint: what goes here to say an exception is expected?
         [ExpectedException(typeof(ArgumentException), "n = 0")]
-        public void EnsureFactorialCalcIterativeFails()
+        public void FactorialCalcIterativeFails()
         {
             Factorial recursiveTest = new Factorial();
-
-            int expected_sum = 0;
             int actual_sum = recursiveTest.Recursive(0);
-
-            Assert.AreEqual(expected_sum, actual_sum);
         }
     }
 }
