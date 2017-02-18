@@ -68,5 +68,17 @@ namespace FoundationsMasteryTests
             Assert.AreEqual(expectedResult, actualResult);
         }
 
+        [TestMethod]
+        public void EnsureSomeoneLookedAtAssignment()
+        {
+            // Act
+            WindowsOS windowsos = new WindowsOS();
+            // Arrange
+            bool expectedResult = true;
+            bool actualResult = Convert.ToBoolean(windowsos.ReverseString("eslaf"));
+            // Assert
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
     }
 }
