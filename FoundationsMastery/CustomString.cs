@@ -41,7 +41,7 @@ namespace FoundationsMastery
             Contents = null;
         }
 
-        public virtual string Concat(IEnumerable<char> rhs)//rhs == right hand side
+        public string Concat(IEnumerable<char> rhs)//rhs == right hand side
         {
             string con = "";
 
@@ -57,7 +57,7 @@ namespace FoundationsMastery
             return con;
         }
 
-        public virtual string Interleave(IEnumerable<char> rhs)
+        public string Interleave(IEnumerable<char> rhs)
         {
             /*Did not work not sure why????
             var conListTest = Contents;
