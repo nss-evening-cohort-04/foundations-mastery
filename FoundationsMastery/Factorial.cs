@@ -36,9 +36,7 @@ namespace FoundationsMastery
                 return 1;
             }
             else
-            {
                 throw new System.ArgumentOutOfRangeException();
-            }
         }
     }
 }
