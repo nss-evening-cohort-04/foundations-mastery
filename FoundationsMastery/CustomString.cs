@@ -61,27 +61,16 @@ namespace FoundationsMastery
             CustomString myString = new CustomString();
             char[] argArray = rhs.ToArray();
             char[] contentArray = contents.ToArray();
-            int longerContainer;
             char[] interleaveOutput = new char[argArray.Count() + contentArray.Count()];
             string interleaveOutputString = null;
 
-            // Check which container is longer, to ensure all contents go through loop
-            if (argArray.Count() < contentArray.Count())
-            {
-                longerContainer = argArray.Count();
-            }
-            else
-            {
-                longerContainer = contentArray.Count();
-            }
-
-            var numbersAndWords = contentArray.Zip(argArray, (first, second) => first + "" + second);
-            //var sums = b.Zip(a, (x, y) => x + y).Concat(b.Skip(a.Count()));
+            IEnumerable<string> numbersAndWords = contentArray.Zip(argArray, (first, second) => first + "" + second);
 
             foreach (string x in numbersAndWords)
             {
                 interleaveOutputString += x;
             }
+
             return interleaveOutputString;
         }
 
