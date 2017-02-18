@@ -18,7 +18,14 @@ namespace FoundationsMasteryTests
         /*[TestMethod]
         public void EnsureFactorialCalcInterative()
         {
+            //Assert
+            Factorial factorial = new Factorial();
+            int n = 5;
 
+            //Act
+            expected_result = 120;
+
+            //Assert
         }*/
 
         /*[TestMethod]

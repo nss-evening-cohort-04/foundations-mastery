@@ -42,10 +42,13 @@ namespace FoundationsMastery
 
         public string Concat(IEnumerable<char> rhs)
         {
-            
             var concatted = Contents.Concat(rhs);
-            concatted.GetEnumerator();
-            return concatted.ToString();
+            var stringBulder = new StringBuilder();
+            foreach (char thing in concatted)
+                {
+                    stringBulder.Append(thing);
+                }
+            return stringBulder.ToString();
         }
 
         public string Interleave(IEnumerable<char> rhs)
