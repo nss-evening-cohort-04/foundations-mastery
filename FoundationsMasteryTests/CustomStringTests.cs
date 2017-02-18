@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FoundationsMastery.Interfaces;
 using FoundationsMastery;
 using System.Collections.Generic;
+using System.Collections;
 
 namespace FoundationsMasteryTests
 {
@@ -64,14 +65,23 @@ namespace FoundationsMasteryTests
             Assert.IsNull(myString.Contents);
         }
 
-        /*[TestMethod]
+        [TestMethod]
         public void EnsureStringConcatenation()
         {
             //Arrange
+            
+            var theFirst = new char[] { 'd', 'i', 'n', 'o'};
+            var theSecond = new char[] {'5', '6', '7', '8' };
+            CustomString baseString = new CustomString(theFirst);
+            CustomString stringToAdd = new CustomString(theSecond);
 
             //Act
+            string concatString = baseString.Concat(stringToAdd.Contents);
 
             //Assert
-        }*/
+            Assert.AreEqual("dino5678", concatString);
+
+
+        }
     }
 }

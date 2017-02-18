@@ -42,7 +42,10 @@ namespace FoundationsMastery
 
         public string Concat(IEnumerable<char> rhs)
         {
-            throw new NotImplementedException();
+            
+            var concatted = Contents.Concat(rhs);
+            concatted.GetEnumerator();
+            return concatted.ToString();
         }
 
         public string Interleave(IEnumerable<char> rhs)
