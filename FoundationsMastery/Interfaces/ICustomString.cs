@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace FoundationsMastery.Interfaces
 {
-    interface ICustomString
+     public interface ICustomString
     {
-        IEnumerable<char> Contents { set; get; }
-        int Length { get; }
+        IEnumerable<char> Contents { set; get; }// Contents holds the data 
+        int Length { get; } // integer to get length of item
         string Print();
-        string Concat(IEnumerable<char> rhs);
-        void Clear();
-        string Interleave(IEnumerable<char> rhs);
+        string Concat(IEnumerable<char> rhs);//Concat Contents and rhs 
+        void Clear();// clear contents data
+        string Interleave(IEnumerable<char> rhs);// interleave will mix collection rhs
     }
 }
