@@ -38,7 +38,6 @@ namespace FoundationsMasteryTests
         }
 
         [TestMethod]
-        //Hint: what goes here to say an exception is expected?
         [ExpectedException(typeof(ArgumentException), "n = 0")]
         public void FactorialCalcRecursiveFails()
         {
@@ -48,7 +47,6 @@ namespace FoundationsMasteryTests
         }
 
         [TestMethod]
-        //Hint: what goes here to say an exception is expected?
         [ExpectedException(typeof(ArgumentException), "n = 0")]
         public void FactorialCalcIterativeFails()
         {
