@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FoundationsMastery;
 
 namespace FoundationsMastery
 {
@@ -30,9 +31,12 @@ namespace FoundationsMastery
                 //return some number
         } */
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             //do nothing ? 
+            var AbbiesComputer = new WindowsComputer();
+
+            Console.WriteLine(AbbiesComputer.Shutdown());
         }
     }
 }
