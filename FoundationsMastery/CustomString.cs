@@ -18,8 +18,8 @@ namespace FoundationsMastery
 
         public CustomString(IEnumerable<char> contents)
         {
-            
-            this.Contents = contents;
+
+            this.Contents = contents; //setting contents passed in, inheriting from interface Contents
         }
 
         public IEnumerable<char> Contents {get; set;}
@@ -32,6 +32,8 @@ namespace FoundationsMastery
             }
                 
          } //gets the length
+
+
 
         public void Clear()
         {

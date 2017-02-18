@@ -12,46 +12,66 @@ namespace FoundationsMasteryTests
         [TestMethod]
         public void EnsureICanCreateAnInstance()
         {
+            //Arrange
             CustomString customString = new CustomString();
 
+            //Assert
             Assert.IsNotNull(customString);
         }
 
         [TestMethod]
         public void EnsureICanPassInACharEnumerable()
         {
+            //Arrange
             char[] mychars = new char[] { 'a', 'b', 'c' };
             CustomString myString = new CustomString(mychars);
 
+            //Act
             int expected_length = 3;
             int actual_length = mychars.Length;
 
+            //Assert
             Assert.AreEqual(expected_length, actual_length);
         }
 
         [TestMethod]
         public void EnsureIHaveContents()
         {
+            //Arrange
             char[] mychars = new char[] { 'a', 'b', 'c' };
             CustomString myString = new CustomString(mychars);
 
-            var expected_type = typeof(IEnumerable<char>);
-            var actual_type = myString.Contents.GetType();
+            //Act
+            int expected_length = 3;
+            int actual_length = mychars.Length;
 
             // 1. Assert that the Contents property is the correct 'type'
-            Assert.IsInstanceOfType(myString, actual_type);
-            // 2. Assert that the returned Contents is the coorect length
-            Assert.AreEqual(expected_type, actual_type);
+            Assert.IsInstanceOfType(myString.Contents, typeof(IEnumerable<char>));
+            // 2. Assert that the returned Contents is the corect length
+            Assert.AreEqual(expected_length, actual_length);
         }
 
         [TestMethod]
         public void EnsureClearAlwaysSetsEmptyContents()
         {
+            //Arrange
             CustomString myString = new CustomString();
 
-            myString.Clear();
+            //Act
+            //myString.Clear();
 
-            Assert.IsNull(myString);
+            //Assert
+            Assert.IsNull(myString.Contents);
         }
+
+        /*[TestMethod]
+        public void EnsureStringConcatenation()
+        {
+            //Arrange
+
+            //Act
+
+            //Assert
+        }*/
     }
 }
