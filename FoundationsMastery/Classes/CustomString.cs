@@ -10,7 +10,7 @@ namespace FoundationsMastery.Classes
     {
         public CustomString(IEnumerable<char> mychars)
         {
-            Contents = mychars;
+            Contents = mychars.ToArray();
         }
 
         public IEnumerable<char> Contents { set; get; }
@@ -26,6 +26,7 @@ namespace FoundationsMastery.Classes
         public void Clear()
         {
             Contents = new List<char>();
+            //Contents = new char[] {  };
         }
 
         public string Concat(IEnumerable<char> rhs)
@@ -33,18 +34,32 @@ namespace FoundationsMastery.Classes
             var myList = Contents.ToArray();
             var rhsList = rhs.ToArray();
 
-            var newArray = myList.Concat(rhsList).ToArray();
-            return newArray.ToString();
+            var newArray = myList.Concat(rhsList);
+            return string.Concat(newArray);
         }
 
         public string Interleave(IEnumerable<char> rhs)
         {
-            throw new NotImplementedException();
+            var contents = Contents.ToArray();
+            var rhsToArray = rhs.ToArray();
+            var counter = 0;
+            var newString = "";
+
+            for (var i = 0; i < contents.Length; i++)
+            {
+                var newContentString = contents[i].ToString();
+                var newRhsString = rhsToArray[i].ToString();
+                newString += newContentString + newRhsString; 
+                counter = counter + 1;
+            }
+            return newString;
+
+            //throw new NotImplementedException();
         }
 
         public string Print()
         {
-            return Contents.ToString();
+            return string.Concat(Contents);
         }
     }
 }
