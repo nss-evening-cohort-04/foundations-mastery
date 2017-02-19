@@ -10,6 +10,7 @@ namespace FoundationsMasteryTests
         [TestMethod]
         public void EnsureICanCreateAnInstance()
         {
+            //arrange
             Factorial factorial = new Factorial();
 
             //assert
@@ -20,6 +21,15 @@ namespace FoundationsMasteryTests
         [TestMethod]
         public void EnsureFactorialCalcInterative()
         {
+            //arrange
+            Factorial factorial = new Factorial();
+
+            //act
+            int expected_result = 120;
+            int actual_result = factorial.Iterative(5);
+
+            //assert
+            Assert.AreEqual(expected_result, actual_result);
 
         }
 

@@ -7,12 +7,19 @@ namespace FoundationsMastery
     {
         public int Iterative(int n)
         {
-            throw new NotImplementedException();
+            int product = 1;
+            for (int j = 1; j <= n; j++)
+                product *= j;
+            return product;
         }
 
         public int Recursive(int n)
         {
-            throw new NotImplementedException();
+            if (n == 0)
+            {
+                return 1;
+            }
+            return n * Recursive(n - 1);
         }
     }
 
