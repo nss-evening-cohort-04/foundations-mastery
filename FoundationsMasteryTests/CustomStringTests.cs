@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FoundationsMastery;
-
+using System.Collections;
 
 namespace FoundationsMasteryTests 
 {
@@ -19,8 +19,6 @@ namespace FoundationsMasteryTests
         public void EnsureICanPassInACharEnumerable()
         {
             char[] mychars = new char[] { 'a', 'b', 'c' };
-            //CustomString.Contents myString = new CustomString.Contents(mychars);
-
             int expected_length = 3;
             int actual_length = mychars.Length;
 
@@ -34,7 +32,7 @@ namespace FoundationsMasteryTests
             CustomString myString = new CustomString(mychars);
 
             int expected_length = 3;
-            int actual_length = mychars.Length;
+            int actual_length = myString.Length;
 
             // 1. Assert that the Contents property is the correct 'type'
             // 2. Assert that the returned Contents is the coorect length
@@ -51,7 +49,33 @@ namespace FoundationsMasteryTests
             myString.Clear();
 
             // How do you ensure your clear function works?
-            Assert.Equals(0, myString.Length);
+            Assert.AreEqual(0, myString.Length);
+        }
+
+        [TestMethod]
+        public void EnsureCanConcat()
+        {
+            CustomString myConcat = new CustomString(new char[] { 'a', 'b', 'c' });
+            var rhs = new char[] {'r', 'h', 's' };
+            var myString = myConcat.Concat(rhs);
+
+            var expectedResult = "abcrhs";
+            var actualResult = myString;
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestMethod]
+        public void EnsureCanInterleave()
+        {
+            CustomString myInterleave = new CustomString(new char[] { 'a', 'b', 'c' } );
+            var rhs = new char[] { 'r', 'h', 's' };
+            var myString = myInterleave.Interleave(rhs);
+
+            var expectedResult = "arbhcs";
+            var actualResult = myString;
+
+            Assert.AreEqual(expectedResult, actualResult);
         }
     }
 

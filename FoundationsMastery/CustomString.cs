@@ -9,18 +9,18 @@ namespace FoundationsMastery
 {
     public class CustomString : ICustomString
     {
-        public object mychars;
+        private char[] contents;
 
         public IEnumerable<char> Contents
         {
             get
             {
-                throw new NotImplementedException();
+                return contents;
             }
 
             set
             {
-                char[] mychars = new char[] { 'a', 'b', 'c' };
+                 contents = value.ToArray();
             }
         }
 
@@ -28,25 +28,34 @@ namespace FoundationsMastery
         {
             get
             {
-                throw new NotImplementedException();
+                return contents.Length;
             }
         }
 
-        public char Char { get; private set; }
-
         public void Clear()
         {
-            throw new NotImplementedException();
+             contents = new char[0];
         }
 
         public string Concat(IEnumerable<char> rhs)
         {
-            throw new NotImplementedException();
+            
+            string s = new string(Contents.ToArray()) + new string(rhs.ToArray());
+            return s;
         }
 
         public string Interleave(IEnumerable<char> rhs)
         {
-            throw new NotImplementedException();
+            var a = Contents.ToArray();
+            var b = rhs.ToArray();
+            string mystring = "";
+
+            for (int i = 0; i < a.Length; i++)
+            {
+               mystring += a[i] + b[i];
+            }
+
+            return mystring;
         }
 
         public string Print()
@@ -54,14 +63,9 @@ namespace FoundationsMastery
             throw new NotImplementedException();
         }
 
-        public CustomString(char mychars)
-        {
-            this.Char = mychars;
-        }
-
         public CustomString(char[] mychars)
         {
-            this.mychars = mychars;
+            this.contents = mychars;
         }
 
         public CustomString()
