@@ -43,8 +43,8 @@ namespace FoundationsMasteryTests
 
         [TestMethod]
 
-        [ExpectedException(typeof(ArgumentException),
-        "Expecting value above zero.")]
+        //[ExpectedException(typeof(ArgumentException),
+        //"Expecting value above zero.")]
         public void EnsureFactorialCalcRecursiveFails()
         {
             Factorial iterate = new Factorial();
@@ -52,7 +52,6 @@ namespace FoundationsMasteryTests
         }
 
         [TestMethod]
-        //Hint: what goes here to say an exception is expected?
         public void EnsureFactorialCalcIterativeFails()
         {
             Factorial iterate = new Factorial();
