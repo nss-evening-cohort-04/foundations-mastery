@@ -1,14 +1,17 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using FoundationsMastery;
 
 namespace FoundationsMasteryTests
 {
     [TestClass]
-    public class AnimalsTest
+    public class PetsTest
     {
         [TestMethod]
-        public void EnsureICanCreateInstanceAnimals()
+        public void EnsureICanCreateInstanceOfPets()
         {
+            Pets myPet = new Pets();
+            Assert.IsNotNull(myPet);    
         }
     }
 }

@@ -4,11 +4,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace FoundationsMasteryTests
 {
     [TestClass]
-    public class CarsTest
+    public class DogsTest
     {
         [TestMethod]
-        public void EnsureICanCreateInstanceCars()
+        public void EnsureICanCreateInstanceDog()
         {
+
         }
     }
 }

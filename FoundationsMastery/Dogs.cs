@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace FoundationsMastery
 {
-    class Cars
+    class Dogs : Pets
     {
+
     }
 }

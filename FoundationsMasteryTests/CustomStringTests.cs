@@ -69,10 +69,10 @@ namespace FoundationsMasteryTests
         public void EnsureCanInterleave()
         {
             CustomString myInterleave = new CustomString(new char[] { 'a', 'b', 'c' } );
-            var rhs = new char[] { 'r', 'h', 's' };
-            var myString = myInterleave.Interleave(rhs);
+            var myInput = new char[] { '1', '2', '3' };
+            var myString = myInterleave.Interleave(myInput);
 
-            var expectedResult = "arbhcs";
+            var expectedResult = "a1b2c3";
             var actualResult = myString;
 
             Assert.AreEqual(expectedResult, actualResult);
