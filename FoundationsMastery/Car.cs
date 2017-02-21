@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace FoundationsMastery
 {
-    public interface IFactorial
+    class Car
     {
-        int Iterative(int n); // good when n >= 1
-        int Recursive(int n); // good when n >= 1
     }
 }

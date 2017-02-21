@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace FoundationsMastery
 {
-    public interface IFactorial
+    public interface IAutomobile
     {
-        int Iterative(int n); // good when n >= 1
-        int Recursive(int n); // good when n >= 1
+        string Classification { get; set; }
+        string Color { get; set; }
+
     }
+
 }
