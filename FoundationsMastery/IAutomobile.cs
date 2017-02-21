@@ -9,7 +9,7 @@ namespace FoundationsMastery
     public interface IAutomobile
     {
         string Classification { get; set; }
-        string Color { get; set; }
+        string Color { get; }
 
     }
 

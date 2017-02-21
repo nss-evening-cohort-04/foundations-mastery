@@ -6,7 +6,22 @@ using System.Threading.Tasks;
 
 namespace FoundationsMastery
 {
-    class Car
+    public class Car : Truck
     {
+        public string Make { get; set; }
+        public string Model { get; set; }
+        public virtual void FuelType()
+        {
+            Console.WriteLine("Gas");
+        }
+        
+       }
+    public class Deisel : Car
+    {
+        public override void FuelType()
+        {
+            Console.WriteLine("Deisel");
+        }
+
     }
 }

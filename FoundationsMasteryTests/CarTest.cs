@@ -1,14 +1,16 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using FoundationsMastery;
 
 namespace FoundationsMasteryTests
 {
     [TestClass]
-    public class UnitTest1
+    public class CarTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void EnsureICanCreateCar()
         {
+            Car car = new Car();
         }
     }
 }

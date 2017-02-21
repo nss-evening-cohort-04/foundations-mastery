@@ -12,7 +12,8 @@ namespace FoundationsMastery
         {
             get
             {
-                throw new NotImplementedException(); 
+                return null;
+
             }
             set
             {
