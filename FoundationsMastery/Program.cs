@@ -10,6 +10,7 @@ namespace FoundationsMastery
     {
         static void Main(string[] args)
         {
+            //need four classes, they don't have to inherit from interface.
         }
     }
 }
