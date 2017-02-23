@@ -36,12 +36,7 @@ namespace FoundationsMastery
 
         public string Concat(IEnumerable<char> rhs)
         {
-            string myString = "the quick brown fox jumps over the lazy dog";
-            string mySecondString = "this is the second string";
-
-            Contents = String.Concat(myString, mySecondString);
-
-            return (string)Contents;
+            return Contents.Concat(rhs).ToString();
         }
 
         public string Interleave(IEnumerable<char> rhs)
