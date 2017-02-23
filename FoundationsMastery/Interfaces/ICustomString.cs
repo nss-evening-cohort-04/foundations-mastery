@@ -16,3 +16,4 @@ namespace FoundationsMastery.Interfaces
         string Interleave(IEnumerable<char> rhs);
     }
 }
+ 
