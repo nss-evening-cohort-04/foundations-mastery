@@ -19,7 +19,7 @@ namespace FoundationsMasteryTests
         }
 
        [TestMethod]
-        public void EnsureFactorialCalcInterative()
+        public void EnsureFactorialCalcIterative()
         {
  
             Factorial myFactorial = new Factorial();

@@ -33,9 +33,9 @@ namespace FoundationsMastery
             {
                 return 1;
             }
-            else
+            else //formula found via MSDN
             {
-                // Recursion keeps going
+                n = n * (n - 1);
                 return Recursive(n);
             }
         }
