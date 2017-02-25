@@ -6,17 +6,15 @@ using System.Threading.Tasks;
 
 namespace FoundationsMastery
 {
-    class Factorial : Interfaces.IFactorial
+    public class Factorial : Interfaces.IFactorial
     {
-
         public Factorial()
         {
-            //Factorial factorial = new Factorial();
+
         }
 
         public int Iterative(int n) //method template was provided by instructor
         {
-            Factorial factorial = new Factorial();
             //  Make an Enumerable up to n OR mutate a temporary variable
             int iterativeResult = 1;
             //  Iterate over your enumerable OR up/down to your temporary variable
@@ -24,7 +22,6 @@ namespace FoundationsMastery
             {
                 iterativeResult *= i;
             }
-            //  Maybe stash the results?
             //  return some number
 
             return iterativeResult;

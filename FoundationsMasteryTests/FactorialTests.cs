@@ -13,31 +13,27 @@ namespace FoundationsMasteryTests
         [TestMethod]
         public void EnsureICanCreateAnInstance()
         {
-            Factorial factorial = new Factorial();
+            Factorial myFactorial = new Factorial();
 
-            Assert.IsNotNull(factorial);
+            Assert.IsNotNull(myFactorial);
         }
 
-       /* [TestMethod]
+       [TestMethod]
         public void EnsureFactorialCalcInterative()
         {
-            //Assert
-            Factorial factorial = new Factorial();
-            int n = 5;
+ 
+            Factorial myFactorial = new Factorial();
+            int iterativeAnswer = myFactorial.Iterative(5);
+            Assert.AreEqual(120, iterativeAnswer);
+        }
 
-            //Act
-            int expected_result = 120;
-            int actual_result = Iterative(n);
-
-            //Assert
-            Assert.AreEqual(expected_result, actual_result);
-        }*/
-
-        /*[TestMethod]
+        [TestMethod]
         public void EnsureFactorialCalcRecursive()
         {
-
-        }*/
+            Factorial myFactorial = new Factorial();
+            int recursiveAnswer = myFactorial.Recursive(6);
+            Assert.AreEqual(720, recursiveAnswer);
+        }
 
         /*[TestMethod]
         //Hint: what goes here to say an exception is expected?

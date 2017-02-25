@@ -12,7 +12,4 @@ namespace FoundationsMastery.Interfaces
         int Recursive(int n); // good when n >= 1
     }
 
-    public class Factorial
-    {
-    }
 }
