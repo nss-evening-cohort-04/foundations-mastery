@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace FoundationsMastery
 {
-    class Dinosaur
+    public class Dinosaur
     {
+        //Attributes common to all dinosaurs
+        public string Name { get; set; }
+        public int Weight { get; set; }
+        public int Height { get; set; }
+
+
+        //Virtual method to override in child class
+        public virtual void DinoVocalization()
+        {
+            Console.Write("ROAR");
+        }
+        
     }
 }

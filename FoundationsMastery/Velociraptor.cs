@@ -6,7 +6,22 @@ using System.Threading.Tasks;
 
 namespace FoundationsMastery
 {
-    class Velociraptor
+    public class Velociraptor : Dinosaur
     {
-    }
-}
+        public bool isCarnivore { get; set; }
+        public int runningSpeed { get; set; }
+
+
+        public Velociraptor(string name)
+        {
+            base.Name = name;
+        }
+
+        public override void DinoVocalization()
+        {
+            Console.Write("*chatter*");
+        }
+
+     }
+ }
+
