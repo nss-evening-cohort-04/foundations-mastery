@@ -8,9 +8,11 @@ namespace FoundationsMastery
 {
     public class Kitten : Cat
     {
-        public override void Meow()
+        public override string Meow()
         {
-            base.Meow();
+            string meow = "nyan nyan";
+
+            return meow;
         }
     }
 }

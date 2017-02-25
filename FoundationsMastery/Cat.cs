@@ -8,9 +8,11 @@ namespace FoundationsMastery
 {
     public class Cat
     {
-        public virtual void Meow()
+        public virtual string Meow()
         {
+            string meow = "meow meow";
 
+            return meow;
         }
     }
 }
