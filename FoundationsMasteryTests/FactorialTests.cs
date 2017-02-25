@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using FoundationsMastery;
 
 namespace FoundationsMasteryTests
 {
@@ -7,32 +8,50 @@ namespace FoundationsMasteryTests
     public class FactorialTests
     {
         [TestMethod]
-        public void EnsureICanCreateAnInstance()
+        public void CreateAnInstance()
         {
+            Factorial factorialTest = new Factorial();
+
+            Assert.IsNotNull(factorialTest);
         }
 
         [TestMethod]
-        public void EnsureFactorialCalcInterative()
+        public void FactorialCalcInterative()
         {
+            Factorial interativeTest = new Factorial();
+
+            int expected_sum = 24;
+            int actual_sum = interativeTest.Iterative(4);
+
+            Assert.AreEqual(expected_sum, actual_sum);
+        }
+
+        [TestMethod]
+        public void FactorialCalcRecursive()
+        {
+            Factorial recursiveTest = new Factorial();
+
+            int expected_sum = 6;
+            int actual_sum = recursiveTest.Recursive(3);
+
+            Assert.AreEqual(expected_sum, actual_sum);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException), "n = 0")]
+        public void FactorialCalcRecursiveFails()
+        {
+            Factorial interativeTest = new Factorial();
+            int actual_sum = interativeTest.Iterative(0);
 
         }
 
         [TestMethod]
-        public void EnsureFactorialCalcRecursive()
+        [ExpectedException(typeof(ArgumentException), "n = 0")]
+        public void FactorialCalcIterativeFails()
         {
-
-        }
-
-        [TestMethod]
-        //Hint: what goes here to say an exception is expected?
-        public void EnsureFactorialCalcRecursiveFails()
-        {
-        }
-
-        [TestMethod]
-        //Hint: what goes here to say an exception is expected?
-        public void EnsureFactorialCalcIterativeFails()
-        {
+            Factorial recursiveTest = new Factorial();
+            int actual_sum = recursiveTest.Recursive(0);
         }
     }
 }
