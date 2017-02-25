@@ -6,29 +6,42 @@ using System.Threading.Tasks;
 
 namespace FoundationsMastery
 {
-    class Factorial
+    class Factorial : Interfaces.IFactorial
     {
 
-        public int MyRecursiveFunc(int n) //method template provided by instructor
+        public Factorial()
         {
-            if (n == 0) 
-            {
-                return 1;
-            } 
-            else 
-            {
-                // Recursion keeps going
-                return MyRecursiveFunc(n);
-            }
-        } 
+            //Factorial factorial = new Factorial();
+        }
 
-        /*public int MyIterativeFunc(int n)//method template provided by instructor
+        public int Iterative(int n) //method template was provided by instructor
         {
+            Factorial factorial = new Factorial();
             //  Make an Enumerable up to n OR mutate a temporary variable
+            int iterativeResult = 1;
             //  Iterate over your enumerable OR up/down to your temporary variable
+            for (int i = 1; i <= n; i++)
+            {
+                iterativeResult *= i;
+            }
             //  Maybe stash the results?
             //  return some number
-        }*/
+
+            return iterativeResult;
+        }
+
+        public int Recursive(int n) //method template was provided by instructor
+        {
+            if (n == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                // Recursion keeps going
+                return Recursive(n);
+            }
+        }
     }
 
 }

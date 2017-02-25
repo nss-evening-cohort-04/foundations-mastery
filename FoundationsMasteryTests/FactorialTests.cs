@@ -1,6 +1,9 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using FoundationsMastery;
 using FoundationsMastery.Interfaces;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace FoundationsMasteryTests
 {
@@ -15,7 +18,7 @@ namespace FoundationsMasteryTests
             Assert.IsNotNull(factorial);
         }
 
-        /*[TestMethod]
+       /* [TestMethod]
         public void EnsureFactorialCalcInterative()
         {
             //Assert
@@ -23,9 +26,11 @@ namespace FoundationsMasteryTests
             int n = 5;
 
             //Act
-            expected_result = 120;
+            int expected_result = 120;
+            int actual_result = Iterative(n);
 
             //Assert
+            Assert.AreEqual(expected_result, actual_result);
         }*/
 
         /*[TestMethod]
