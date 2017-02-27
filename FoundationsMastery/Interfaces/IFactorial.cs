@@ -11,4 +11,5 @@ namespace FoundationsMastery.Interfaces
         int Iterative(int n); // good when n >= 1
         int Recursive(int n); // good when n >= 1
     }
+
 }
