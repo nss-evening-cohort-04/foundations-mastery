@@ -29,7 +29,7 @@ namespace FoundationsMastery
 
         public void Clear()
         {
-            return myString.Clear();
+            Contents = new char[0];
         }
 
         public string Concat(IEnumerable<char> rhs)
@@ -37,14 +37,27 @@ namespace FoundationsMastery
             return String.Concat(rhs);
         }
 
+        public string Print()
+        {
+            throw new NotImplementedException();
+        }
+
         public string Interleave(IEnumerable<char> rhs)
         {
             throw new NotImplementedException();
         }
 
-        public string Print()
-        {
-            return String.Concat(Contents);
-        }
+        //public string Interleave(IEnumerable<char> rhs)
+        //{
+
     }
-}
+
+    //public string Print()
+    //{
+   
+    var myString = new CustomString(new char[] { 'a', 'b', 'c' };
+                    myString.Concat("123");       // => returns "abc123"
+
+          return String.Concat(Contents);
+        }
+//}
