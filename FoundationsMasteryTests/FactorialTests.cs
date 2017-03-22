@@ -9,11 +9,14 @@ namespace FoundationsMasteryTests
         [TestMethod]
         public void EnsureICanCreateAnInstance()
         {
+            Factorial factorial = new Factorial();
+            Assert.IsNotNull(factorial);
         }
 
         [TestMethod]
         public void EnsureFactorialCalcInterative()
         {
+
         }
 
         [TestMethod]
@@ -35,25 +38,4 @@ namespace FoundationsMasteryTests
         }
     }
 }
-//Recursive - look this up for formula to solve above.
 
-//    class program
-//    public interface Recursive(int value)
-//{
-//if (this makes recusion stop);
-//{
-///*return some number*/
-//} else
-//{ //resursion keeps going
-//    return Recursive(/*mutate value and pass it into itself*/);
-//}
-
-
-//public int Iterative(int n)
-//{
-//    //make enumberable up to n
-//    //or something else
-//    //then iterate over your ennumberable 
-//    //maybe stash temp results
-//    //return some number
-//}

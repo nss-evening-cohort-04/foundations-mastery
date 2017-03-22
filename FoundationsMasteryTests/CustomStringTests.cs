@@ -14,8 +14,6 @@ namespace FoundationsMasteryTests
         {
             //arrange
             CustomString createinstance = new CustomString();
-            
-            //act
 
             //assert
             Assert.IsNotNull(createinstance);
@@ -40,6 +38,8 @@ namespace FoundationsMasteryTests
             char[] mychars = new char[] { 'a', 'b', 'c' };
             CustomString myString = new CustomString(mychars);
 
+            int expected_length = 3;
+            int actual_length = myString.Length;
             // 1. Assert that the Contents property is the correct 'type'
             //Assert.AreEqual(myString.Contents.GetType(),typeof(IEnumerable<char>));
 
@@ -48,8 +48,6 @@ namespace FoundationsMasteryTests
             //int actual_length = myString.Contents.ToString; // not length - look up other methods;
             Assert.IsTrue(myString.Contents.Any());
         }
-
-
 
         [TestMethod]
         public void EnsureClearAlwaysSetsEmptyContents()
@@ -64,5 +62,31 @@ namespace FoundationsMasteryTests
             //assert
             Assert.IsFalse(myString.Contents.Any());
     }
+        [TestMethod]
+        public void EnsureICanConcat()
+        {
+            CustomString myConcat = new CustomString(new char[] { 'a', 'b', 'c' });
+            var rhs = new char[] { 'd', 'e', 'f' };
+            var myString = myConcat.Concat(rhs);
+
+            var expectedResult = "abcdef";
+            var actualResult = myConcat;
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestMethod]
+        public void EnsureICanInterleave()
+        {
+            CustomString myInterleave = new CustomString(new char[] { 'a', 'b', 'c' });
+            var userImput = new char[] { '1', '2', '3' };
+            var myString = myInterleave.Interleave(userImput);
+
+            var expectedResult = "a1b2c3";
+            var actualResult = myInterleave;
+
+            Assert.AreEqual(expectedResult, actualResult);
+        }
     }
+
 }

@@ -52,7 +52,13 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="child.cs" />
+    <Compile Include="CustomString.cs" />
     <Compile Include="CustomStringTests.cs" />
+    <Compile Include="Factorial.cs" />
+    <Compile Include="Interfaces\ICustomFactorial.cs" />
+    <Compile Include="Interfaces\ICustomString.cs" />
+    <Compile Include="parent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FactorialTests.cs" />
   </ItemGroup>
