@@ -9,6 +9,8 @@ namespace FoundationsMasteryTests
         [TestMethod]
         public void EnsureICanCreateAnInstance()
         {
+            Factorial factorial = new Factorial();
+            Assert.IsNotNull(factorial);
         }
 
         [TestMethod]
@@ -36,3 +38,4 @@ namespace FoundationsMasteryTests
         }
     }
 }
+
